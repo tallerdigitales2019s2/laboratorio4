@@ -4,35 +4,115 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "position_o[0]",
+					"name" : "board_status[8][0]",
 					"strict" : false
 				},
 				{
-					"name" : "position_o[1]",
+					"name" : "board_status[8][1]",
 					"strict" : false
 				},
 				{
-					"name" : "position_o[2]",
+					"name" : "board_status[7][0]",
 					"strict" : false
 				},
 				{
-					"name" : "position_o[3]",
+					"name" : "board_status[7][1]",
 					"strict" : false
 				},
 				{
-					"name" : "confirm_o",
+					"name" : "board_status[6][0]",
 					"strict" : false
 				},
 				{
-					"name" : "btn_confirm_i",
+					"name" : "board_status[6][1]",
 					"strict" : false
 				},
 				{
-					"name" : "btn_right_i",
+					"name" : "board_status[5][0]",
 					"strict" : false
 				},
 				{
-					"name" : "btn_down_i",
+					"name" : "board_status[5][1]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[4][0]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[4][1]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[3][0]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[3][1]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[2][0]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[2][1]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[1][1]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "board_status[0][1]",
+					"strict" : false
+				},
+				{
+					"name" : "current_pos_available",
+					"strict" : false
+				},
+				{
+					"name" : "valid_move",
+					"strict" : false
+				},
+				{
+					"name" : "cursor_i[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cursor_i[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cursor_i[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cursor_i[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "confirm_pos_i",
+					"strict" : false
+				},
+				{
+					"name" : "enable_i",
+					"strict" : false
+				},
+				{
+					"name" : "current_player_i",
 					"strict" : false
 				}
 			]

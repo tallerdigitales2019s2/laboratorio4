@@ -41,3 +41,5 @@ vsim work.CursorController_tb
 add wave -position insertpoint sim:/CursorController_tb/*
 run
 # Inicio de la simulacion para controlador de cursor
+# End time: 01:25:20 on Oct 09,2019, Elapsed time: 0:03:38
+# Errors: 0, Warnings: 1, Suppressed Warnings: 10
