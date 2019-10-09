@@ -1,0 +1,35 @@
+module CursorController(btn_right_i, btn_down_i, btn_confirm_i, position_o, confirm_o);
+input logic btn_confirm_i, btn_down_i, btn_right_i;
+output logic[3:0] position_o = 4b'0000;
+output logic confirm_o;
+
+assign confirm_o = btn_confirm_i;
+
+
+always@(posedge btn_down_i or posedge btn_right_i)
+begin
+if(btn_right_i xor btn_down_i)
+begin
+if(btn_right_i)
+ case (position_o)
+  4'b0010 : position_o = 4'b0000
+  4'b0101 : position_o = 4'b0011
+  4'b1000 : position_o = 4'b0110
+  default:position_o=position_o+1;
+endcase
+else if(btn_down_i)
+ case (position_o)
+  4'b0110 : position_o = 4'b0000
+  4'b0111 : position_o = 4'b0001
+  4'b1000 : position_o = 4'b0010
+  default:position_o=position_o+3;
+endcase
+
+
+end
+
+
+
+end
+
+endmodule

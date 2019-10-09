@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "position_o[0]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[3]",
+					"strict" : false
+				},
+				{
+					"name" : "confirm_o",
+					"strict" : false
+				},
+				{
+					"name" : "btn_confirm_i",
+					"strict" : false
+				},
+				{
+					"name" : "btn_right_i",
+					"strict" : false
+				},
+				{
+					"name" : "btn_down_i",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,16 @@
+|CursorController_tb
+
+
+|CursorController_tb|CursorController:DUT
+btn_right_i => Equal0.IN3
+btn_right_i => Equal1.IN3
+btn_down_i => Equal0.IN2
+btn_down_i => Equal1.IN2
+btn_confirm_i => confirm_o.DATAIN
+position_o[0] <= position_o[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+position_o[1] <= position_o[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+position_o[2] <= position_o[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+position_o[3] <= position_o[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+confirm_o <= btn_confirm_i.DB_MAX_OUTPUT_PORT_TYPE
+
+
