@@ -10,14 +10,14 @@ assign buttons = {btn_down_i,btn_right_i};
 always@(posedge btn_down_i or posedge btn_right_i )begin
 
 case (buttons) 
-  2'b01 : 
+  2'b01 : //derecha
 		case (position_o)
 		  4'b0010 : position_o <= 4'b0000;
 		  4'b0101 : position_o <= 4'b0011;
 		  4'b1000 : position_o <= 4'b0110;
 		  default:position_o<=position_o+4'b0001;
 		endcase
-	2'b10 :
+	2'b10 : //abajo
 		case (position_o)
 		  4'b0110 : position_o <= 4'b0000;
 		  4'b0111 : position_o <= 4'b0001;

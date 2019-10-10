@@ -4,115 +4,123 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "board_status[8][0]",
+					"name" : "game_end_o",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[8][1]",
+					"name" : "tie_o",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[7][0]",
+					"name" : "winner_o",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[7][1]",
+					"name" : "winner_move[0]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[6][0]",
+					"name" : "winner_move[1]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[6][1]",
+					"name" : "winner_move[2]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[5][0]",
+					"name" : "winner_move[3]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[5][1]",
+					"name" : "winner_move[4]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[4][0]",
+					"name" : "winner_move[5]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[4][1]",
+					"name" : "winner_move[6]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[3][0]",
+					"name" : "winner_move[7]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[3][1]",
+					"name" : "winner_move[8]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[2][0]",
+					"name" : "current_board_i[0][1]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[2][1]",
+					"name" : "current_board_i[4][1]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[1][0]",
+					"name" : "current_board_i[8][1]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[1][1]",
+					"name" : "current_board_i[4][0]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[0][0]",
+					"name" : "current_board_i[8][0]",
 					"strict" : false
 				},
 				{
-					"name" : "board_status[0][1]",
+					"name" : "current_board_i[0][0]",
 					"strict" : false
 				},
 				{
-					"name" : "current_pos_available",
+					"name" : "current_board_i[3][1]",
 					"strict" : false
 				},
 				{
-					"name" : "valid_move",
+					"name" : "current_board_i[5][1]",
 					"strict" : false
 				},
 				{
-					"name" : "cursor_i[2]",
+					"name" : "current_board_i[3][0]",
 					"strict" : false
 				},
 				{
-					"name" : "cursor_i[0]",
+					"name" : "current_board_i[5][0]",
 					"strict" : false
 				},
 				{
-					"name" : "cursor_i[1]",
+					"name" : "current_board_i[2][1]",
 					"strict" : false
 				},
 				{
-					"name" : "cursor_i[3]",
+					"name" : "current_board_i[6][1]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "current_board_i[2][0]",
 					"strict" : false
 				},
 				{
-					"name" : "confirm_pos_i",
+					"name" : "current_board_i[6][0]",
 					"strict" : false
 				},
 				{
-					"name" : "enable_i",
+					"name" : "current_board_i[1][1]",
 					"strict" : false
 				},
 				{
-					"name" : "current_player_i",
+					"name" : "current_board_i[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "current_board_i[7][1]",
+					"strict" : false
+				},
+				{
+					"name" : "current_board_i[7][0]",
 					"strict" : false
 				}
 			]

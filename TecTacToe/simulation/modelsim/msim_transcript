@@ -9,37 +9,37 @@
 # Copying /opt/altera/18.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv}
+# vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:21:17 on Oct 09,2019
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv 
-# -- Compiling module CursorController
+# Start time: 16:40:01 on Oct 09,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv 
+# -- Compiling module DetectGameEndAux
 # 
 # Top level modules:
-# 	CursorController
-# End time: 01:21:18 on Oct 09,2019, Elapsed time: 0:00:01
+# 	DetectGameEndAux
+# End time: 16:40:01 on Oct 09,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController_tb.sv}
+# vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:21:18 on Oct 09,2019
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController_tb.sv 
-# -- Compiling module CursorController_tb
+# Start time: 16:40:01 on Oct 09,2019
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv 
+# -- Compiling module DetectGameEndAux_tb
+# ** Warning: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv(21): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
-# 	CursorController_tb
-# End time: 01:21:18 on Oct 09,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# 	DetectGameEndAux_tb
+# End time: 16:40:01 on Oct 09,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
 # 
-vsim work.CursorController_tb
-# vsim work.CursorController_tb 
-# Start time: 01:21:42 on Oct 09,2019
+vsim work.DetectGameEndAux_tb
+# vsim work.DetectGameEndAux_tb 
+# Start time: 16:40:20 on Oct 09,2019
 # Loading sv_std.std
-# Loading work.CursorController_tb
-# Loading work.CursorController
-# ** Warning: (vsim-3839) /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController_tb.sv(3): Variable '/CursorController_tb/position_o', driven via a port connection, is multiply driven. See /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController_tb.sv(6).
-#    Time: 0 ps  Iteration: 0  Instance: /CursorController_tb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController_tb.sv
-add wave -position insertpoint sim:/CursorController_tb/*
+# Loading work.DetectGameEndAux_tb
+# Loading work.DetectGameEndAux
+add wave -position insertpoint sim:/DetectGameEndAux_tb/*
+add wave -position end  sim:/DetectGameEndAux_tb/positions_vector
+add wave -position insertpoint sim:/DetectGameEndAux_tb/DUT/*
 run
-# Inicio de la simulacion para controlador de cursor
-# End time: 01:25:20 on Oct 09,2019, Elapsed time: 0:03:38
-# Errors: 0, Warnings: 1, Suppressed Warnings: 10
+# End time: 18:25:19 on Oct 09,2019, Elapsed time: 1:44:59
+# Errors: 0, Warnings: 0, Suppressed Warnings: 10

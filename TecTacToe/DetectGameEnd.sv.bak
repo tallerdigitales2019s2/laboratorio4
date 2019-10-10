@@ -1,0 +1,7 @@
+module DetectGameEnd(current_board_i, game_end_o, tie_o, winner_o, winner_move);
+input logic [1:0] current_board_i [0:8];
+output logic game_end_o,tie_o,winner_o;
+output logic [8:0] winner_move;
+
+
+endmodule

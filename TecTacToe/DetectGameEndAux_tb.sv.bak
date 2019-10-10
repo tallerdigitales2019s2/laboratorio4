@@ -1,0 +1,19 @@
+module DetectGameEndAux_tb(positions_vector, win_o, winner_o);
+logic [1:0] positions_vector [0:2];
+logic win_o, winner_o;
+
+
+initial
+begin
+positions_vector={1'b00,1'b00,1'b00}
+
+
+
+end
+
+
+
+
+
+
+endmodule
