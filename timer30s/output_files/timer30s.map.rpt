@@ -1,5 +1,5 @@
 Analysis & Elaboration report for timer30s
-Tue Oct 08 14:38:31 2019
+Sat Oct 12 08:36:07 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -9,9 +9,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: timer30:timer
+  4. Parameter Settings for User Entity Instance: timer30:timer30s
   5. Analysis & Elaboration Settings
-  6. Port Connectivity Checks: "timer30:timer"
+  6. Port Connectivity Checks: "timer30:timer30s"
   7. Analysis & Elaboration Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Tue Oct 08 14:38:31 2019       ;
+; Analysis & Elaboration Status ; Successful - Sat Oct 12 08:36:07 2019       ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; timer30s                                    ;
 ; Top-level Entity Name         ; tb_timer30                                  ;
@@ -69,13 +69,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: timer30:timer ;
-+-----------------+-------+----------------------------------+
-; Parameter Name  ; Value ; Type                             ;
-+-----------------+-------+----------------------------------+
-; clock_frequency ; 25    ; Signed Integer                   ;
-+-----------------+-------+----------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer30:timer30s ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; clk_frequency  ; 25    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -167,7 +167,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "timer30:timer"                                                                      ;
+; Port Connectivity Checks: "timer30:timer30s"                                                                   ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -181,7 +181,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 08 14:38:18 2019
+    Info: Processing started: Sat Oct 12 08:35:54 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off timer30s -c timer30s --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -190,16 +190,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file timer30
 Info (12021): Found 1 design units, including 1 entities, in source file tb_timer30.sv
     Info (12023): Found entity 1: tb_timer30 File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 1
 Info (12127): Elaborating entity "tb_timer30" for the top level hierarchy
-Warning (10755): Verilog HDL warning at tb_timer30.sv(9): assignments to clk create a combinational loop File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 9
-Info (12128): Elaborating entity "timer30" for hierarchy "timer30:timer" File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 7
-Warning (10230): Verilog HDL assignment warning at timer30.sv(19): truncated value with size 32 to match size of target (5) File: C:/Users/Gaby/Desktop/timer30s/timer30.sv Line: 19
-Critical Warning (10237): Verilog HDL warning at timer30.sv(25): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/Gaby/Desktop/timer30s/timer30.sv Line: 25
+Warning (10755): Verilog HDL warning at tb_timer30.sv(6): assignments to clk create a combinational loop File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 6
+Info (12128): Elaborating entity "timer30" for hierarchy "timer30:timer30s" File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 4
+Warning (10230): Verilog HDL assignment warning at timer30.sv(18): truncated value with size 32 to match size of target (4) File: C:/Users/Gaby/Desktop/timer30s/timer30.sv Line: 18
+Warning (10230): Verilog HDL assignment warning at timer30.sv(23): truncated value with size 32 to match size of target (4) File: C:/Users/Gaby/Desktop/timer30s/timer30.sv Line: 23
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "clk" is missing source, defaulting to GND File: C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv Line: 2
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4771 megabytes
-    Info: Processing ended: Tue Oct 08 14:38:31 2019
+    Info: Peak virtual memory: 4772 megabytes
+    Info: Processing ended: Sat Oct 12 08:36:07 2019
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Total CPU time (on all processors): 00:00:29
 
 

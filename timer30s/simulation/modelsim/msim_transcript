@@ -12,39 +12,37 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/Gaby/Desktop/timer30s {C:/Users/Gaby/Desktop/timer30s/timer30.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:38:48 on Oct 08,2019
+# Start time: 08:36:42 on Oct 12,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Gaby/Desktop/timer30s" C:/Users/Gaby/Desktop/timer30s/timer30.sv 
 # -- Compiling module timer30
 # 
 # Top level modules:
 # 	timer30
-# End time: 14:38:48 on Oct 08,2019, Elapsed time: 0:00:00
+# End time: 08:36:42 on Oct 12,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Gaby/Desktop/timer30s {C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:38:48 on Oct 08,2019
+# Start time: 08:36:42 on Oct 12,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Gaby/Desktop/timer30s" C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv 
 # -- Compiling module tb_timer30
 # 
 # Top level modules:
 # 	tb_timer30
-# End time: 14:38:48 on Oct 08,2019, Elapsed time: 0:00:00
+# End time: 08:36:42 on Oct 12,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vsim work.tb_timer30
 # vsim work.tb_timer30 
-# Start time: 14:38:53 on Oct 08,2019
+# Start time: 08:53:09 on Oct 12,2019
 # Loading sv_std.std
 # Loading work.tb_timer30
 # Loading work.timer30
 add wave -position insertpoint  \
-sim:/tb_timer30/clk
-add wave -position insertpoint  \
-sim:/tb_timer30/out
-add wave -position insertpoint  \
+sim:/tb_timer30/clk \
+sim:/tb_timer30/out \
 sim:/tb_timer30/reset
 run -all
 # Break key hit
-# Break in Module timer30 at C:/Users/Gaby/Desktop/timer30s/timer30.sv line 6
-# End time: 14:40:20 on Oct 08,2019, Elapsed time: 0:01:27
+# Break in Module tb_timer30 at C:/Users/Gaby/Desktop/timer30s/tb_timer30.sv line 6
+# End time: 08:53:57 on Oct 12,2019, Elapsed time: 0:00:48
 # Errors: 0, Warnings: 0
