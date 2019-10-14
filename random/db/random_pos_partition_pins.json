@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "random[0]",
+					"strict" : false
+				},
+				{
+					"name" : "random[1]",
+					"strict" : false
+				},
+				{
+					"name" : "random[2]",
+					"strict" : false
+				},
+				{
+					"name" : "random[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "ini_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ini_value[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "ini_value[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ini_value[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
