@@ -1,5 +1,5 @@
 Flow report for TecTacToe
-Wed Oct  9 20:24:48 2019
+Mon Oct 14 12:45:32 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,29 +37,24 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Oct  9 20:24:48 2019       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; TecTacToe                                   ;
-; Top-level Entity Name           ; DetectGameEnd                               ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 30                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Flow Summary                                                              ;
++-----------------------------+---------------------------------------------+
+; Flow Status                 ; Successful - Mon Oct 14 12:45:32 2019       ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; TecTacToe                                   ;
+; Top-level Entity Name       ; DetectGameEndAux_tb                         ;
+; Family                      ; Cyclone V                                   ;
+; Device                      ; 5CSEMA5F31C6                                ;
+; Timing Models               ; Final                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,52 +62,52 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/09/2019 20:24:35 ;
+; Start date & time ; 10/14/2019 12:45:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TecTacToe           ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                              ;
-+-------------------------------------+----------------------------------------+---------------+---------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+---------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 79554451191335.157067427557366         ; --            ; --            ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --            ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --            ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --            ; eda_simulation ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DetectGameEnd ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; DetectGameEnd ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; DetectGameEnd ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --            ; --             ;
-; TOP_LEVEL_ENTITY                    ; DetectGameEnd                          ; TecTacToe     ; --            ; --             ;
-+-------------------------------------+----------------------------------------+---------------+---------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++-------------------------------------+----------------------------------------+---------------+---------------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name         ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+---------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 24458498445201.157107872216985         ; --            ; --                  ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --                  ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --                  ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                  ; eda_simulation ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DetectGameEndAux_tb ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; DetectGameEndAux_tb ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; DetectGameEndAux_tb ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                  ; --             ;
+; TOP_LEVEL_ENTITY                    ; DetectGameEndAux_tb                    ; TecTacToe     ; --                  ; --             ;
++-------------------------------------+----------------------------------------+---------------+---------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 995 MB              ; 00:00:34                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:34                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:10     ; 1.0                     ; 1240 MB             ; 00:00:26                           ;
+; Total                  ; 00:00:10     ; --                      ; --                  ; 00:00:26                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                            ;
-+----------------------+------------------+----------------+----------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version     ; Processor type ;
-+----------------------+------------------+----------------+----------------+----------------+
-; Analysis & Synthesis ; winterfell       ; Antergos Linux ; Antergos Linux ; x86_64         ;
-+----------------------+------------------+----------------+----------------+----------------+
++----------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                              ;
++------------------------+------------------+----------------+----------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name        ; OS Version     ; Processor type ;
++------------------------+------------------+----------------+----------------+----------------+
+; Analysis & Elaboration ; winterfell       ; Antergos Linux ; Antergos Linux ; x86_64         ;
++------------------------+------------------+----------------+----------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe
+quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe --analysis_and_elaboration
 
 
 

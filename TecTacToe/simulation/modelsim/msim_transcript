@@ -11,35 +11,33 @@
 # 
 # vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:40:01 on Oct 09,2019
+# Start time: 12:45:36 on Oct 14,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv 
 # -- Compiling module DetectGameEndAux
 # 
 # Top level modules:
 # 	DetectGameEndAux
-# End time: 16:40:01 on Oct 09,2019, Elapsed time: 0:00:00
+# End time: 12:45:36 on Oct 14,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe {/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:40:01 on Oct 09,2019
+# Start time: 12:45:36 on Oct 14,2019
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe" /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv 
 # -- Compiling module DetectGameEndAux_tb
-# ** Warning: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv(21): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	DetectGameEndAux_tb
-# End time: 16:40:01 on Oct 09,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
+# End time: 12:45:36 on Oct 14,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # 
 vsim work.DetectGameEndAux_tb
 # vsim work.DetectGameEndAux_tb 
-# Start time: 16:40:20 on Oct 09,2019
+# Start time: 12:45:43 on Oct 14,2019
 # Loading sv_std.std
 # Loading work.DetectGameEndAux_tb
 # Loading work.DetectGameEndAux
 add wave -position insertpoint sim:/DetectGameEndAux_tb/*
-add wave -position end  sim:/DetectGameEndAux_tb/positions_vector
-add wave -position insertpoint sim:/DetectGameEndAux_tb/DUT/*
 run
-# End time: 18:25:19 on Oct 09,2019, Elapsed time: 1:44:59
-# Errors: 0, Warnings: 0, Suppressed Warnings: 10
+# Can't move the Now cursor.
+# End time: 12:46:50 on Oct 14,2019, Elapsed time: 0:01:07
+# Errors: 1, Warnings: 0, Suppressed Warnings: 10

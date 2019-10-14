@@ -1,5 +1,5 @@
-Analysis & Synthesis report for TecTacToe
-Wed Oct  9 20:24:48 2019
+Analysis & Elaboration report for TecTacToe
+Mon Oct 14 12:45:32 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,17 +7,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "DetectGameEndAux:DUT"
+  6. Analysis & Elaboration Messages
 
 
 
@@ -40,114 +34,22 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct  9 20:24:48 2019       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; TecTacToe                                   ;
-; Top-level Entity Name           ; DetectGameEnd                               ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 30                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                          ; Setting            ; Default Value      ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; DetectGameEnd      ; TecTacToe          ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
-; Enable compact report table                                                     ; Off                ; Off                ;
-; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
-; Preserve fewer node names                                                       ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto               ; Auto               ;
-; Safe State Machine                                                              ; Off                ; Off                ;
-; Extract Verilog State Machines                                                  ; On                 ; On                 ;
-; Extract VHDL State Machines                                                     ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
-; Parallel Synthesis                                                              ; On                 ; On                 ;
-; DSP Block Balancing                                                             ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                 ; On                 ;
-; Power-Up Don't Care                                                             ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
-; Remove Duplicate Registers                                                      ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
-; Optimization Technique                                                          ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                              ; 70                 ; 70                 ;
-; Auto Carry Chains                                                               ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
-; Auto ROM Replacement                                                            ; On                 ; On                 ;
-; Auto RAM Replacement                                                            ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
-; Strict RAM Replacement                                                          ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                           ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
-; Report Parameter Settings                                                       ; On                 ; On                 ;
-; Report Source Assignments                                                       ; On                 ; On                 ;
-; Report Connectivity Checks                                                      ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
-; HDL message level                                                               ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
-; Clock MUX Protection                                                            ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
-; Block Design Naming                                                             ; Auto               ; Auto               ;
-; SDC constraint protection                                                       ; Off                ; Off                ;
-; Synthesis Effort                                                                ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Mon Oct 14 12:45:32 2019       ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                 ; TecTacToe                                   ;
+; Top-level Entity Name         ; DetectGameEndAux_tb                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
 
 
 +------------------------------------------+
@@ -159,140 +61,119 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
-; DetectGameEnd.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv    ;         ;
-; DetectGameEndAux.sv              ; yes             ; User SystemVerilog HDL File  ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                            ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                          ; Setting             ; Default Value      ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6        ;                    ;
+; Top-level entity name                                                           ; DetectGameEndAux_tb ; TecTacToe          ;
+; Family name                                                                     ; Cyclone V           ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                 ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                 ;
+; Enable compact report table                                                     ; Off                 ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                ;
+; Preserve fewer node names                                                       ; On                  ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                ; Auto               ;
+; Safe State Machine                                                              ; Off                 ; Off                ;
+; Extract Verilog State Machines                                                  ; On                  ; On                 ;
+; Extract VHDL State Machines                                                     ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                  ; On                 ;
+; Parallel Synthesis                                                              ; On                  ; On                 ;
+; DSP Block Balancing                                                             ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                  ; On                 ;
+; Power-Up Don't Care                                                             ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                      ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                 ; Off                ;
+; Optimization Technique                                                          ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                              ; 70                  ; 70                 ;
+; Auto Carry Chains                                                               ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                 ; Off                ;
+; Auto ROM Replacement                                                            ; On                  ; On                 ;
+; Auto RAM Replacement                                                            ; On                  ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                  ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                  ; On                 ;
+; Strict RAM Replacement                                                          ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                           ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                  ; On                 ;
+; Report Parameter Settings                                                       ; On                  ; On                 ;
+; Report Source Assignments                                                       ; On                  ; On                 ;
+; Report Connectivity Checks                                                      ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                   ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                               ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                 ; 100                ;
+; Clock MUX Protection                                                            ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                 ; Off                ;
+; Block Design Naming                                                             ; Auto                ; Auto               ;
+; SDC constraint protection                                                       ; Off                 ; Off                ;
+; Synthesis Effort                                                                ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                  ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                  ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                 ; Off                ;
++---------------------------------------------------------------------------------+---------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                   ;
-+---------------------------------------------+---------------------------------+
-; Resource                                    ; Usage                           ;
-+---------------------------------------------+---------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 33                              ;
-;                                             ;                                 ;
-; Combinational ALUT usage for logic          ; 51                              ;
-;     -- 7 input functions                    ; 0                               ;
-;     -- 6 input functions                    ; 14                              ;
-;     -- 5 input functions                    ; 11                              ;
-;     -- 4 input functions                    ; 15                              ;
-;     -- <=3 input functions                  ; 11                              ;
-;                                             ;                                 ;
-; Dedicated logic registers                   ; 0                               ;
-;                                             ;                                 ;
-; I/O pins                                    ; 30                              ;
-;                                             ;                                 ;
-; Total DSP Blocks                            ; 0                               ;
-;                                             ;                                 ;
-; Maximum fan-out node                        ; DetectGameEndAux:comb_9|win_o~0 ;
-; Maximum fan-out                             ; 14                              ;
-; Total fan-out                               ; 273                             ;
-; Average fan-out                             ; 2.46                            ;
-+---------------------------------------------+---------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DetectGameEndAux:DUT"                                                                           ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; positions_vector ; Input  ; Info     ; Stuck at GND                                                                        ;
+; win_o            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; winner_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name      ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+------------------+--------------+
-; |DetectGameEnd                ; 51 (42)             ; 0 (0)                     ; 0                 ; 0          ; 30   ; 0            ; |DetectGameEnd                          ; DetectGameEnd    ; work         ;
-;    |DetectGameEndAux:comb_10| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_10 ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_3|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_3  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_4|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_4  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_5|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_5  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_6|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_6  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_7|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_7  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_8|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_8  ; DetectGameEndAux ; work         ;
-;    |DetectGameEndAux:comb_9|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DetectGameEnd|DetectGameEndAux:comb_9  ; DetectGameEndAux ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; winner_move[0]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[1]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[2]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[3]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[4]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[5]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[6]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[7]$latch                               ; WideOr2             ; yes                    ;
-; winner_move[8]$latch                               ; WideOr2             ; yes                    ;
-; Number of user-specified and inferred latches = 9  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 51                          ;
-;     normal            ; 51                          ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 11                          ;
-;         6 data inputs ; 14                          ;
-; boundary_port         ; 30                          ;
-;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.53                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Oct  9 20:24:35 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe
+    Info: Processing started: Mon Oct 14 12:45:22 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file CursorController.sv
@@ -307,55 +188,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file DetectG
     Info (12023): Found entity 1: DetectGameEnd File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file DetectGameEndAux.sv
     Info (12023): Found entity 1: DetectGameEndAux File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 1
-Warning (10229): Verilog HDL Expression warning at DetectGameEndAux_tb.sv(21): truncated literal to match 1 bits File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file DetectGameEndAux_tb.sv
-    Info (12023): Found entity 1: DetectGameEndAux_tb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 1
+    Info (12023): Found entity 1: DetectGameEndAux_tb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file GameController.sv
+    Info (12023): Found entity 1: GameController File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 1
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(12): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 12
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(16): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 16
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(19): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 19
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(20): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 20
-Info (12127): Elaborating entity "DetectGameEnd" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at DetectGameEnd.sv(36): incomplete case statement has no default case item File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Warning (10240): Verilog HDL Always Construct warning at DetectGameEnd.sv(36): inferring latch(es) for variable "winner_move", which holds its previous value in one or more paths through the always construct File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[0]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[1]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[2]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[3]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[4]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[5]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[6]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[7]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (10041): Inferred latch for "winner_move[8]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-Info (12128): Elaborating entity "DetectGameEndAux" for hierarchy "DetectGameEndAux:comb_3" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 12
-Warning (13012): Latch winner_move[0]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_4|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[1]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_6|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[2]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_5|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[3]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_6|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[4]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_4|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[5]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_7|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[6]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_3|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[7]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_6|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Warning (13012): Latch winner_move[8]$latch has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DetectGameEndAux:comb_5|win_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 3
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 51 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 1038 megabytes
-    Info: Processing ended: Wed Oct  9 20:24:48 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:34
+Info (12127): Elaborating entity "DetectGameEndAux_tb" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DetectGameEndAux_tb.sv(46): object "positions_vector3" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 46
+Warning (10030): Net "positions_vector" at DetectGameEndAux_tb.sv(46) has no driver or initial value, using a default initial value '0' File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 46
+Info (12128): Elaborating entity "DetectGameEndAux" for hierarchy "DetectGameEndAux:DUT" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 51
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 1240 megabytes
+    Info: Processing ended: Mon Oct 14 12:45:32 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:26
 
 
