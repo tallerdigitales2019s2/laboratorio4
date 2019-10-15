@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Oct 08 14:36:15 2019
+Fitter Status : Successful - Sat Oct 12 08:29:38 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : timer30s
 Top-level Entity Name : timer30
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 28 / 56,480 ( < 1 % )
-Total registers : 48
-Total pins : 7 / 268 ( 3 % )
+Logic utilization (in ALMs) : 26 / 56,480 ( < 1 % )
+Total registers : 50
+Total pins : 3 / 268 ( 1 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )

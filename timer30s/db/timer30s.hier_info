@@ -1,12 +1,11 @@
 |tb_timer30
 
 
-|tb_timer30|timer30:timer
-clk => seconds[0].CLK
-clk => seconds[1].CLK
-clk => seconds[2].CLK
-clk => seconds[3].CLK
-clk => seconds[4].CLK
+|tb_timer30|timer30:timer30s
+clk => sec[0].CLK
+clk => sec[1].CLK
+clk => sec[2].CLK
+clk => sec[3].CLK
 clk => counter[0].CLK
 clk => counter[1].CLK
 clk => counter[2].CLK
@@ -39,11 +38,11 @@ clk => counter[28].CLK
 clk => counter[29].CLK
 clk => counter[30].CLK
 clk => counter[31].CLK
-reset => seconds[0].ACLR
-reset => seconds[1].ACLR
-reset => seconds[2].ACLR
-reset => seconds[3].ACLR
-reset => seconds[4].ACLR
+clk => out~reg0.CLK
+reset => sec[0].ACLR
+reset => sec[1].ACLR
+reset => sec[2].ACLR
+reset => sec[3].ACLR
 reset => counter[0].ACLR
 reset => counter[1].ACLR
 reset => counter[2].ACLR
@@ -76,10 +75,7 @@ reset => counter[28].ACLR
 reset => counter[29].ACLR
 reset => counter[30].ACLR
 reset => counter[31].ACLR
-out[0] <= seconds[0].DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= seconds[1].DB_MAX_OUTPUT_PORT_TYPE
-out[2] <= seconds[2].DB_MAX_OUTPUT_PORT_TYPE
-out[3] <= seconds[3].DB_MAX_OUTPUT_PORT_TYPE
-out[4] <= seconds[4].DB_MAX_OUTPUT_PORT_TYPE
+reset => out~reg0.ACLR
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,0 +1,59 @@
+|tb_randomNumber
+
+
+|tb_randomNumber|RandomPosition:n
+current_pos_available => confirm.DATAIN
+clk => clk.IN1
+reset => reset.IN1
+out[0] <= randomNumber:randomN.random
+out[1] <= randomNumber:randomN.random
+out[2] <= randomNumber:randomN.random
+out[3] <= randomNumber:randomN.random
+confirm <= current_pos_available.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_randomNumber|RandomPosition:n|randomNumber:randomN
+clk => clk.IN4
+reset => reset.IN4
+ini_value[0] => ini_value[0].IN1
+ini_value[1] => ini_value[1].IN1
+ini_value[2] => ini_value[2].IN1
+ini_value[3] => ini_value[3].IN1
+random[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+random[1] <= FF_D:FFD1.q
+random[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+random[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tb_randomNumber|RandomPosition:n|randomNumber:randomN|FF_D:FFD0
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+reset => q~reg0.ALOAD
+clk => q~reg0.CLK
+init_value => q~reg0.ADATA
+
+
+|tb_randomNumber|RandomPosition:n|randomNumber:randomN|FF_D:FFD1
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+reset => q~reg0.ALOAD
+clk => q~reg0.CLK
+init_value => q~reg0.ADATA
+
+
+|tb_randomNumber|RandomPosition:n|randomNumber:randomN|FF_D:FFD2
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+reset => q~reg0.ALOAD
+clk => q~reg0.CLK
+init_value => q~reg0.ADATA
+
+
+|tb_randomNumber|RandomPosition:n|randomNumber:randomN|FF_D:FFD3
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d => q~reg0.DATAIN
+reset => q~reg0.ALOAD
+clk => q~reg0.CLK
+init_value => q~reg0.ADATA
+
+
