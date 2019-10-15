@@ -1,3 +1,0 @@
-module TecTacToe();
-
-endmodule
