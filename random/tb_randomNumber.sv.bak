@@ -1,0 +1,18 @@
+module tb_randomNumber;
+	logic clk, reset;
+	logic [3:0] ini_value;
+	logic [3:0] random;
+
+	randomNumber randomN (.clk(clk), .reset(reset), .ini_value(ini_value), .random(random));  
+					  
+	always #5 clk=~clk;				  
+
+	initial begin
+		clk=0;
+		reset=0;
+		ini_value=4'b1111;
+
+		#20;
+		reset=1;
+	end
+endmodule 
