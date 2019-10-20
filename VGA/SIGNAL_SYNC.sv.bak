@@ -1,0 +1,10 @@
+module SIGNAL_SYNC (intput logic V_SYNC, H_SYNC, CLOCK);
+
+	H_COUNTER h_signal ();
+	V_COUNTER v_signal
+	
+	always @ (posedge CLOCK) begin
+	
+	end
+	
+endmodule 

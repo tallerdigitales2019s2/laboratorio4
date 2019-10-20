@@ -1,0 +1,4 @@
+module H_COUNTER_TB()
+	logic CLOCK
+	
+endmodule 

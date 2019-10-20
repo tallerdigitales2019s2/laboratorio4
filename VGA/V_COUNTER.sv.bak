@@ -1,0 +1,20 @@
+module V_COUNTER (input logic H_SYNC_FLAG, CLOCK, output V_SYNC_FLAG)
+	int VISIBLE_AREA = 640
+	int FRONT_PORCH = 10,
+	int BACK_PORCH = 33,
+	int SYNC_PULSE =2,
+	int WHOLE_LINE = 800,
+	int CURRENT_PIXEL = 0,
+	
+	always @(posedge CLOCK) begin
+		if(CURRENT_PIXEL == WHOLE_LINE) begin
+			CURRENT_PIXEL = 0
+		end
+		else if (CURRENT_PIXEL == (VISIBLE_AREA+FRONT_PORCH)) begin
+			SYNC_PULSE = 1
+		end
+		else if (CURRENT_PIXEL ==(VISIBLE_AREA+FRONT_PORCH+BACK_PORCH)) begin
+			SYNC_PULSE = 0
+		end
+	end
+endmodule 

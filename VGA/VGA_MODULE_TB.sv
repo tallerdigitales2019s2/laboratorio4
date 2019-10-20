@@ -5,8 +5,11 @@ module VGA_MODULE_TB();
 	logic v_sync;
 	logic h_sync;
 	logic write_en;
-	//pll_clock_0002 testclk (.refclk(clk), .outclk_0(vga_clk) );
-	SIGNAL_SYNC uut (.CLOCK(clk),.V_EN(write_en), .V_SYNC(v_sync), .H_SYNC(h_sync));
+	logic [7:0] R = 8'b00000000;
+	logic [7:0] G= 8'b00000000;
+	logic [7:0] B= 8'b00000000;
+	CLK_DIVIDER testclk (.in_clk(clk), .out_clk(vga_clk));
+	VGA_MODULE uut (.clk(vga_clk),.R(R),.B(B),.G(G), .V_SYNC(v_sync), .H_SYNC(h_sync));
 	initial
 		clk = 1'b0;
 	always
