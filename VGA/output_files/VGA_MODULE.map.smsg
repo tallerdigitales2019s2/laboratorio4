@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at VGA_MODULE.sv(1): object "V_SYNC" differs only in case from object "v_sync" in the same scope File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
+Info (10281): Verilog HDL Declaration information at VGA_MODULE.sv(1): object "H_SYNC" differs only in case from object "h_sync" in the same scope File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
