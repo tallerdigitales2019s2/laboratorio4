@@ -1,0 +1,5 @@
+module H_COUNTER(input logic V_SYNC_FLAG, input logic CLOCK, output logic H_SYNC_FLAG)
+		int FRONT_PORCH = 16,
+		int BACK_PORCH = 48,
+		
+endmodule 

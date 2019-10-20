@@ -1,0 +1,9 @@
+module CLK_DIVIDER(input logic in_clk, output logic out_clk);
+	logic q;
+
+	always@(posedge in_clk)
+	begin
+		q <= ~q; 
+		out_clk <= q;
+	end
+endmodule 
