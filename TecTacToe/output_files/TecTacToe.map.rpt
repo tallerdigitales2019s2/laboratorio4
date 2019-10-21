@@ -1,5 +1,5 @@
-Analysis & Elaboration report for TecTacToe
-Mon Oct 14 12:45:32 2019
+Analysis & Synthesis report for TecTacToe
+Mon Oct 21 02:12:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,11 +7,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "DetectGameEndAux:DUT"
-  6. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated
+ 14. Parameter Settings for User Entity Instance: VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component
+ 15. Parameter Settings for Inferred Entity Instance: VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "VGA_MODULE:vga|DrawSquare:ds"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +48,114 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Oct 14 12:45:32 2019       ;
-; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                 ; TecTacToe                                   ;
-; Top-level Entity Name         ; DetectGameEndAux_tb                         ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 02:12:38 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; TecTacToe                                   ;
+; Top-level Entity Name           ; TecTacToe                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 167                                         ;
+; Total pins                      ; 30                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 240,000                                     ;
+; Total DSP Blocks                ; 1                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; TecTacToe          ; TecTacToe          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -61,121 +167,379 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                            ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Option                                                                          ; Setting             ; Default Value      ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6        ;                    ;
-; Top-level entity name                                                           ; DetectGameEndAux_tb ; TecTacToe          ;
-; Family name                                                                     ; Cyclone V           ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                 ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                 ;
-; Enable compact report table                                                     ; Off                 ; Off                ;
-; Restructure Multiplexers                                                        ; Auto                ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                ;
-; Preserve fewer node names                                                       ; On                  ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993           ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto                ; Auto               ;
-; Safe State Machine                                                              ; Off                 ; Off                ;
-; Extract Verilog State Machines                                                  ; On                  ; On                 ;
-; Extract VHDL State Machines                                                     ; On                  ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                 ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000                ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                 ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                  ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                  ; On                 ;
-; Parallel Synthesis                                                              ; On                  ; On                 ;
-; DSP Block Balancing                                                             ; Auto                ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                  ; On                 ;
-; Power-Up Don't Care                                                             ; On                  ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                 ; Off                ;
-; Remove Duplicate Registers                                                      ; On                  ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                 ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                 ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                 ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                 ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                 ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                  ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                 ; Off                ;
-; Optimization Technique                                                          ; Balanced            ; Balanced           ;
-; Carry Chain Length                                                              ; 70                  ; 70                 ;
-; Auto Carry Chains                                                               ; On                  ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                  ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                 ; Off                ;
-; Auto ROM Replacement                                                            ; On                  ; On                 ;
-; Auto RAM Replacement                                                            ; On                  ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                  ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto                ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                  ; On                 ;
-; Strict RAM Replacement                                                          ; Off                 ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                  ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                 ; Off                ;
-; Auto Resource Sharing                                                           ; Off                 ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                 ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                  ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                 ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                  ; On                 ;
-; Report Parameter Settings                                                       ; On                  ; On                 ;
-; Report Source Assignments                                                       ; On                  ; On                 ;
-; Report Connectivity Checks                                                      ; On                  ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                   ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation ;
-; HDL message level                                                               ; Level2              ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                 ; 100                ;
-; Clock MUX Protection                                                            ; On                  ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                 ; Off                ;
-; Block Design Naming                                                             ; Auto                ; Auto               ;
-; SDC constraint protection                                                       ; Off                 ; Off                ;
-; Synthesis Effort                                                                ; Auto                ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                  ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                 ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium              ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                  ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                  ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                 ; Off                ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; sprite_cars.v                    ; yes             ; User Wizard-Generated File             ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/sprite_cars.v              ;         ;
+; VGA_MODULE.sv                    ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv              ;         ;
+; CLK_DIVIDER.sv                   ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CLK_DIVIDER.sv             ;         ;
+; SIGNAL_SYNC.sv                   ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/SIGNAL_SYNC.sv             ;         ;
+; V_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/V_COUNTER.sv               ;         ;
+; spriteDrawer.sv                  ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/spriteDrawer.sv            ;         ;
+; H_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/H_COUNTER.sv               ;         ;
+; DrawSquare.sv                    ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv              ;         ;
+; TecTacToe.sv                     ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/aglobal181.inc                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altrom.inc                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altram.inc                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
+; db/altsyncram_89g1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/altsyncram_89g1.tdf     ;         ;
+; zelda_sword.mif                  ; yes             ; Auto-Found Memory Initialization File  ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/zelda_sword.mif            ;         ;
+; db/decode_u0a.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/decode_u0a.tdf          ;         ;
+; db/mux_3hb.tdf                   ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/mux_3hb.tdf             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                  ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/abs_divider.inc                 ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc             ;         ;
+; db/lpm_divide_15m.tdf            ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/lpm_divide_15m.tdf      ;         ;
+; db/sign_div_unsign_4nh.tdf       ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/sign_div_unsign_4nh.tdf ;         ;
+; db/alt_u_div_e2f.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/alt_u_div_e2f.tdf       ;         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "DetectGameEndAux:DUT"                                                                           ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                             ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
-; positions_vector ; Input  ; Info     ; Stuck at GND                                                                        ;
-; win_o            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; winner_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 210       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 350       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 61        ;
+;     -- 5 input functions                    ; 34        ;
+;     -- 4 input functions                    ; 14        ;
+;     -- <=3 input functions                  ; 241       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 167       ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 240000    ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 1         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 150       ;
+; Total fan-out                               ; 2437      ;
+; Average fan-out                             ; 3.89      ;
++---------------------------------------------+-----------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                          ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                       ; Entity Name         ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |TecTacToe                                         ; 350 (0)             ; 167 (0)                   ; 240000            ; 1          ; 30   ; 0            ; |TecTacToe                                                                                                                                                ; TecTacToe           ; work         ;
+;    |VGA_MODULE:vga|                                ; 350 (0)             ; 167 (0)                   ; 240000            ; 1          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga                                                                                                                                 ; VGA_MODULE          ; work         ;
+;       |CLK_DIVIDER:testclk|                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|CLK_DIVIDER:testclk                                                                                                             ; CLK_DIVIDER         ; work         ;
+;       |DrawSquare:ds|                              ; 260 (158)           ; 100 (98)                  ; 240000            ; 1          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds                                                                                                                   ; DrawSquare          ; work         ;
+;          |lpm_divide:Mod0|                         ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0                                                                                                   ; lpm_divide          ; work         ;
+;             |lpm_divide_15m:auto_generated|        ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0|lpm_divide_15m:auto_generated                                                                     ; lpm_divide_15m      ; work         ;
+;                |sign_div_unsign_4nh:divider|       ; 64 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_4nh:divider                                         ; sign_div_unsign_4nh ; work         ;
+;                   |alt_u_div_e2f:divider|          ; 64 (64)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0|lpm_divide_15m:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_e2f:divider                   ; alt_u_div_e2f       ; work         ;
+;          |spriteDrawer:sp|                         ; 38 (14)             ; 2 (0)                     ; 240000            ; 1          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp                                                                                                   ; spriteDrawer        ; work         ;
+;             |sprite_cars:sprite_c2|                ; 24 (0)              ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2                                                                             ; sprite_cars         ; work         ;
+;                |altsyncram:altsyncram_component|   ; 24 (0)              ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component                                             ; altsyncram          ; work         ;
+;                   |altsyncram_89g1:auto_generated| ; 24 (0)              ; 2 (2)                     ; 240000            ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated              ; altsyncram_89g1     ; work         ;
+;                      |mux_3hb:mux2|                ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|mux_3hb:mux2 ; mux_3hb             ; work         ;
+;       |SIGNAL_SYNC:sync|                           ; 88 (4)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync                                                                                                                ; SIGNAL_SYNC         ; work         ;
+;          |H_COUNTER:h_signal|                      ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync|H_COUNTER:h_signal                                                                                             ; H_COUNTER           ; work         ;
+;          |V_COUNTER:v_signal|                      ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync|V_COUNTER:v_signal                                                                                             ; V_COUNTER           ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
+; Name                                                                                                                                         ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                ;
++----------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
+; VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 10000        ; 24           ; --           ; --           ; 240000 ; ../zelda_sword.mif ;
++----------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; VGA_MODULE:vga|DrawSquare:ds|sp_y[14..31] ; Lost fanout                            ;
+; VGA_MODULE:vga|DrawSquare:ds|sp_x[18..31] ; Lost fanout                            ;
+; VGA_MODULE:vga|DrawSquare:ds|pos[9,10]    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 34    ;                                        ;
++-------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 167   ;
+; Number of registers using Synchronous Clear  ; 97    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|G[7] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|B[2] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |TecTacToe|VGA_MODULE:vga|DrawSquare:ds|pos  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                         ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                          ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                                ;
++------------------------------------+----------------------+-------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                             ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                             ;
+; WIDTH_A                            ; 24                   ; Signed Integer                                                                      ;
+; WIDTHAD_A                          ; 14                   ; Signed Integer                                                                      ;
+; NUMWORDS_A                         ; 10000                ; Signed Integer                                                                      ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                             ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                             ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                             ;
+; INIT_FILE                          ; ../zelda_sword.mif   ; Untyped                                                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_89g1      ; Untyped                                                                             ;
++------------------------------------+----------------------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                ;
++------------------------+----------------+-----------------------------------------------------+
+; LPM_WIDTHN             ; 21             ; Untyped                                             ;
+; LPM_WIDTHD             ; 20             ; Untyped                                             ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                             ;
+; LPM_PIPELINE           ; 0              ; Untyped                                             ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                             ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                             ;
+; CBXI_PARAMETER         ; lpm_divide_15m ; Untyped                                             ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                             ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                      ;
++------------------------+----------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                               ;
++-------------------------------------------+----------------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                              ;
++-------------------------------------------+----------------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                                  ;
+; Entity Instance                           ; VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                ;
+;     -- WIDTH_A                            ; 24                                                                                                 ;
+;     -- NUMWORDS_A                         ; 10000                                                                                              ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                             ;
+;     -- WIDTH_B                            ; 1                                                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                          ;
++-------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_MODULE:vga|DrawSquare:ds"                                                                                          ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; R    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "R[31..8]" have no fanouts ;
+; G    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "G[31..8]" have no fanouts ;
+; B    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "B[31..8]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 167                         ;
+;     ENA               ; 43                          ;
+;     ENA SCLR          ; 41                          ;
+;     SCLR              ; 40                          ;
+;     SCLR SLD          ; 16                          ;
+;     plain             ; 27                          ;
+; arriav_lcell_comb     ; 351                         ;
+;     arith             ; 181                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 126                         ;
+;         2 data inputs ; 25                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 10                          ;
+;     normal            ; 149                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 9                           ;
+;         5 data inputs ; 24                          ;
+;         6 data inputs ; 61                          ;
+;     shared            ; 21                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 20                          ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 30                          ;
+; stratixv_ram_block    ; 48                          ;
+;                       ;                             ;
+; Max LUT depth         ; 16.50                       ;
+; Average LUT depth     ; 7.92                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 14 12:45:22 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe --analysis_and_elaboration
+    Info: Processing started: Mon Oct 21 02:12:26 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sprite_cars.v
+    Info (12023): Found entity 1: sprite_cars File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/sprite_cars.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file VGA_MODULE.sv
+    Info (12023): Found entity 1: VGA_MODULE File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file CLOCK_DIVIDER.sv
+    Info (12023): Found entity 1: CLOCK_DIVIDER File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CLOCK_DIVIDER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file CLK_DIVIDER.sv
+    Info (12023): Found entity 1: CLK_DIVIDER File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CLK_DIVIDER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file SIGNAL_SYNC.sv
+    Info (12023): Found entity 1: SIGNAL_SYNC File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/SIGNAL_SYNC.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file VGA_MODULE_TB.sv
+    Info (12023): Found entity 1: VGA_MODULE_TB File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE_TB.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file V_COUNTER.sv
+    Info (12023): Found entity 1: V_COUNTER File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/V_COUNTER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file H_COUNTER_TB.sv
+    Info (12023): Found entity 1: H_COUNTER_TB File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/H_COUNTER_TB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file spriteDrawer.sv
+    Info (12023): Found entity 1: spriteDrawer File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/spriteDrawer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file H_COUNTER.sv
+    Info (12023): Found entity 1: H_COUNTER File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/H_COUNTER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file DrawSquare.sv
+    Info (12023): Found entity 1: DrawSquare File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vgaController.sv
+    Info (12023): Found entity 1: vgaController File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/vgaController.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file V_COUNTER_TB.sv
+    Info (12023): Found entity 1: V_COUNTER_TB File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/V_COUNTER_TB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pll_clock.v
+    Info (12023): Found entity 1: pll_clock File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/pll_clock.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file tb_timer30.sv
+    Info (12023): Found entity 1: tb_timer30 File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/tb_timer30.sv Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file randomNumber.sv
+    Info (12023): Found entity 1: RandomPosition File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/randomNumber.sv Line: 1
+    Info (12023): Found entity 2: randomNumber File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/randomNumber.sv Line: 13
+    Info (12023): Found entity 3: FF_D File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/randomNumber.sv Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file CursorController.sv
     Info (12023): Found entity 1: CursorController File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file CursorController_tb.sv
@@ -188,22 +552,98 @@ Info (12021): Found 1 design units, including 1 entities, in source file DetectG
     Info (12023): Found entity 1: DetectGameEnd File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file DetectGameEndAux.sv
     Info (12023): Found entity 1: DetectGameEndAux File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv Line: 1
+Warning (10229): Verilog HDL Expression warning at DetectGameEndAux_tb.sv(21): truncated literal to match 1 bits File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file DetectGameEndAux_tb.sv
-    Info (12023): Found entity 1: DetectGameEndAux_tb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 45
+    Info (12023): Found entity 1: DetectGameEndAux_tb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file GameController.sv
     Info (12023): Found entity 1: GameController File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file Game.sv
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(20): created implicit net for "line_a" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(21): created implicit net for "line_b" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(22): created implicit net for "line_c" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(23): created implicit net for "line_d" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 23
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(12): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 12
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(16): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 16
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(19): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 19
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(20): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 20
-Info (12127): Elaborating entity "DetectGameEndAux_tb" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DetectGameEndAux_tb.sv(46): object "positions_vector3" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 46
-Warning (10030): Net "positions_vector" at DetectGameEndAux_tb.sv(46) has no driver or initial value, using a default initial value '0' File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 46
-Info (12128): Elaborating entity "DetectGameEndAux" for hierarchy "DetectGameEndAux:DUT" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv Line: 51
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1240 megabytes
-    Info: Processing ended: Mon Oct 14 12:45:32 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:26
+Info (12127): Elaborating entity "TecTacToe" for the top level hierarchy
+Info (12128): Elaborating entity "VGA_MODULE" for hierarchy "VGA_MODULE:vga" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 5
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(20): object "line_a" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 20
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(21): object "line_b" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 21
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(22): object "line_c" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 22
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(23): object "line_d" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(20): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(21): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(22): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(23): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 23
+Warning (10034): Output port "SYNC_N" at VGA_MODULE.sv(3) has no driver File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 3
+Info (12128): Elaborating entity "CLK_DIVIDER" for hierarchy "VGA_MODULE:vga|CLK_DIVIDER:testclk" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 11
+Info (12128): Elaborating entity "SIGNAL_SYNC" for hierarchy "VGA_MODULE:vga|SIGNAL_SYNC:sync" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 13
+Info (12128): Elaborating entity "H_COUNTER" for hierarchy "VGA_MODULE:vga|SIGNAL_SYNC:sync|H_COUNTER:h_signal" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/SIGNAL_SYNC.sv Line: 8
+Warning (10036): Verilog HDL or VHDL warning at H_COUNTER.sv(6): object "BACK_PORCH" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/H_COUNTER.sv Line: 6
+Info (12128): Elaborating entity "V_COUNTER" for hierarchy "VGA_MODULE:vga|SIGNAL_SYNC:sync|V_COUNTER:v_signal" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/SIGNAL_SYNC.sv Line: 9
+Info (12128): Elaborating entity "DrawSquare" for hierarchy "VGA_MODULE:vga|DrawSquare:ds" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at DrawSquare.sv(16): truncated value with size 32 to match size of target (11) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 16
+Info (12128): Elaborating entity "spriteDrawer" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at spriteDrawer.sv(6): truncated value with size 32 to match size of target (14) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/spriteDrawer.sv Line: 6
+Info (12128): Elaborating entity "sprite_cars" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/spriteDrawer.sv Line: 7
+Info (12128): Elaborating entity "altsyncram" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/sprite_cars.v Line: 81
+Info (12130): Elaborated megafunction instantiation "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/sprite_cars.v Line: 81
+Info (12133): Instantiated megafunction "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" with the following parameter: File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/sprite_cars.v Line: 81
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../zelda_sword.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "10000"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "14"
+    Info (12134): Parameter "width_a" = "24"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_89g1.tdf
+    Info (12023): Found entity 1: altsyncram_89g1 File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/altsyncram_89g1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_89g1" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated" File: /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
+    Info (12023): Found entity 1: decode_u0a File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/decode_u0a.tdf Line: 22
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|decode_u0a:rden_decode" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/altsyncram_89g1.tdf Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3hb.tdf
+    Info (12023): Found entity 1: mux_3hb File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/mux_3hb.tdf Line: 22
+Info (12128): Elaborating entity "mux_3hb" for hierarchy "VGA_MODULE:vga|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|mux_3hb:mux2" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/altsyncram_89g1.tdf Line: 41
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "VGA_MODULE:vga|DrawSquare:ds|Mod0" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 16
+Info (12130): Elaborated megafunction instantiation "VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 16
+Info (12133): Instantiated megafunction "VGA_MODULE:vga|DrawSquare:ds|lpm_divide:Mod0" with the following parameter: File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DrawSquare.sv Line: 16
+    Info (12134): Parameter "LPM_WIDTHN" = "21"
+    Info (12134): Parameter "LPM_WIDTHD" = "20"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_15m.tdf
+    Info (12023): Found entity 1: lpm_divide_15m File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/lpm_divide_15m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_4nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_4nh File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/sign_div_unsign_4nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e2f.tdf
+    Info (12023): Found entity 1: alt_u_div_e2f File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/alt_u_div_e2f.tdf Line: 22
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "SYNC_N" is stuck at GND File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 3
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 499 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 420 logic cells
+    Info (21064): Implemented 48 RAM segments
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 1074 megabytes
+    Info: Processing ended: Mon Oct 21 02:12:38 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:27
 
 

@@ -1,5 +1,5 @@
 Flow report for VGA_MODULE
-Sun Oct 20 18:28:34 2019
+Sun Oct 20 21:10:02 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Oct 20 18:28:34 2019       ;
+; Flow Status                     ; Successful - Sun Oct 20 21:10:02 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; VGA_MODULE                                  ;
 ; Top-level Entity Name           ; VGA_MODULE                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 91 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 145                                         ;
+; Logic utilization (in ALMs)     ; 261 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 228                                         ;
 ; Total pins                      ; 31 / 457 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 240,000 / 4,065,280 ( 6 % )                 ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/20/2019 18:27:29 ;
+; Start date & time ; 10/20/2019 21:08:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA_MODULE          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 44883552432060.157161764946932         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 44883552432060.157162732400556         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -98,12 +98,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 1021 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:38     ; 1.1                     ; 2474 MB             ; 00:01:07                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 961 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.3                     ; 1220 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1126 MB             ; 00:00:01                           ;
-; Total                ; 00:01:03     ; --                      ; --                  ; 00:01:48                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 1026 MB             ; 00:00:29                           ;
+; Fitter               ; 00:00:48     ; 1.1                     ; 2470 MB             ; 00:01:26                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 970 MB              ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 1222 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1131 MB             ; 00:00:01                           ;
+; Total                ; 00:01:14     ; --                      ; --                  ; 00:02:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

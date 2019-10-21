@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Oct 20 18:27:39 2019
+Analysis & Synthesis Status : Successful - Sun Oct 20 21:08:56 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : VGA_MODULE
 Top-level Entity Name : VGA_MODULE
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 125
+Total registers : 189
 Total pins : 31
 Total virtual pins : 0
 Total block memory bits : 240,000

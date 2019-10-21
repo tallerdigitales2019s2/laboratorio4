@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_MODULE
-Sun Oct 20 18:27:39 2019
+Sun Oct 20 21:08:56 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -19,7 +19,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated
+ 14. Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated
  15. Parameter Settings for User Entity Instance: DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component
  16. altsyncram Parameter Settings by Entity Instance
  17. Port Connectivity Checks: "DrawSquare:ds"
@@ -51,13 +51,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Oct 20 18:27:39 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 20 21:08:56 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; VGA_MODULE                                  ;
 ; Top-level Entity Name           ; VGA_MODULE                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 125                                         ;
+; Total registers                 ; 189                                         ;
 ; Total pins                      ; 31                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 240,000                                     ;
@@ -197,8 +197,8 @@ refer to the applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_5jf1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf ;         ;
-; cars2.mif                        ; yes             ; Auto-Found Memory Initialization File  ; /home/gsegura/Documents/taller/laboratorio4/VGA/cars2.mif              ;         ;
+; db/altsyncram_89g1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_89g1.tdf ;         ;
+; ../zelda_sword.mif               ; yes             ; Auto-Found Memory Initialization File  ; /home/gsegura/Documents/taller/laboratorio4/VGA/zelda_sword.mif        ;         ;
 ; db/decode_u0a.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/decode_u0a.tdf      ;         ;
 ; db/mux_3hb.tdf                   ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/mux_3hb.tdf         ;         ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------+---------+
@@ -209,16 +209,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 87        ;
+; Estimate of Logic utilization (ALMs needed) ; 302       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 161       ;
+; Combinational ALUT usage for logic          ; 445       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 12        ;
-;     -- 5 input functions                    ; 6         ;
-;     -- 4 input functions                    ; 7         ;
-;     -- <=3 input functions                  ; 136       ;
+;     -- 6 input functions                    ; 158       ;
+;     -- 5 input functions                    ; 43        ;
+;     -- 4 input functions                    ; 34        ;
+;     -- <=3 input functions                  ; 210       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 125       ;
+; Dedicated logic registers                   ; 189       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 31        ;
 ; Total MLAB memory bits                      ; 0         ;
@@ -227,9 +227,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 108       ;
-; Total fan-out                               ; 1586      ;
-; Average fan-out                             ; 3.99      ;
+; Maximum fan-out                             ; 172       ;
+; Total fan-out                               ; 3107      ;
+; Average fan-out                             ; 4.17      ;
 +---------------------------------------------+-----------+
 
 
@@ -238,13 +238,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |VGA_MODULE                                     ; 161 (0)             ; 125 (0)                   ; 240000            ; 1          ; 31   ; 0            ; |VGA_MODULE                                                                                                                    ; VGA_MODULE      ; work         ;
+; |VGA_MODULE                                     ; 445 (0)             ; 189 (0)                   ; 240000            ; 1          ; 31   ; 0            ; |VGA_MODULE                                                                                                                    ; VGA_MODULE      ; work         ;
 ;    |CLK_DIVIDER:testclk|                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|CLK_DIVIDER:testclk                                                                                                ; CLK_DIVIDER     ; work         ;
-;    |DrawSquare:ds|                              ; 71 (57)             ; 58 (56)                   ; 240000            ; 1          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds                                                                                                      ; DrawSquare      ; work         ;
+;    |DrawSquare:ds|                              ; 355 (341)           ; 122 (120)                 ; 240000            ; 1          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds                                                                                                      ; DrawSquare      ; work         ;
 ;       |spriteDrawer:sp|                         ; 14 (14)             ; 2 (0)                     ; 240000            ; 1          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp                                                                                      ; spriteDrawer    ; work         ;
 ;          |sprite_cars:sprite_c2|                ; 0 (0)               ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2                                                                ; sprite_cars     ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;                |altsyncram_5jf1:auto_generated| ; 0 (0)               ; 2 (2)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated ; altsyncram_5jf1 ; work         ;
+;                |altsyncram_89g1:auto_generated| ; 0 (0)               ; 2 (2)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated ; altsyncram_89g1 ; work         ;
 ;    |SIGNAL_SYNC:sync|                           ; 88 (4)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync                                                                                                   ; SIGNAL_SYNC     ; work         ;
 ;       |H_COUNTER:h_signal|                      ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|H_COUNTER:h_signal                                                                                ; H_COUNTER       ; work         ;
 ;       |V_COUNTER:v_signal|                      ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|V_COUNTER:v_signal                                                                                ; V_COUNTER       ; work         ;
@@ -252,13 +252,13 @@ refer to the applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
-; Name                                                                                                                          ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF          ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
-; DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 10000        ; 24           ; --           ; --           ; 240000 ; ../cars2.mif ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
+; Name                                                                                                                          ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
+; DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 10000        ; 24           ; --           ; --           ; 240000 ; ../zelda_sword.mif ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------------+
 
 
 +-----------------------------------------------+
@@ -298,8 +298,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 125   ;
-; Number of registers using Synchronous Clear  ; 88    ;
+; Total registers                              ; 189   ;
+; Number of registers using Synchronous Clear  ; 119   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -313,12 +313,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |VGA_MODULE|DrawSquare:ds|B[5] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |VGA_MODULE|DrawSquare:ds|R[4] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |VGA_MODULE|DrawSquare:ds|pos  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated ;
+; Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                          ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
@@ -369,7 +370,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                              ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                              ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                              ;
-; INIT_FILE                          ; ../cars2.mif         ; Untyped                                                              ;
+; INIT_FILE                          ; ../zelda_sword.mif   ; Untyped                                                              ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                              ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                              ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                              ;
@@ -382,7 +383,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                              ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                              ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                              ;
-; CBXI_PARAMETER                     ; altsyncram_5jf1      ; Untyped                                                              ;
+; CBXI_PARAMETER                     ; altsyncram_89g1      ; Untyped                                                              ;
 +------------------------------------+----------------------+----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -423,28 +424,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 125                         ;
+; arriav_ff             ; 189                         ;
 ;     ENA               ; 32                          ;
 ;     ENA SCLR          ; 32                          ;
-;     SCLR              ; 56                          ;
-;     plain             ; 5                           ;
-; arriav_lcell_comb     ; 162                         ;
-;     arith             ; 105                         ;
-;         1 data inputs ; 90                          ;
-;         2 data inputs ; 15                          ;
-;     normal            ; 57                          ;
+;     SCLR              ; 87                          ;
+;     plain             ; 38                          ;
+; arriav_lcell_comb     ; 446                         ;
+;     arith             ; 202                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 7                           ;
-;         5 data inputs ; 6                           ;
-;         6 data inputs ; 12                          ;
+;         1 data inputs ; 144                         ;
+;         2 data inputs ; 16                          ;
+;         4 data inputs ; 26                          ;
+;         5 data inputs ; 15                          ;
+;     normal            ; 244                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 28                          ;
+;         6 data inputs ; 158                         ;
 ; arriav_mac            ; 1                           ;
 ; boundary_port         ; 31                          ;
 ; stratixv_ram_block    ; 48                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.17                        ;
+; Max LUT depth         ; 15.50                       ;
+; Average LUT depth     ; 8.11                        ;
 +-----------------------+-----------------------------+
 
 
@@ -453,7 +458,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -463,7 +468,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 20 18:27:28 2019
+    Info: Processing started: Sun Oct 20 21:08:44 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_MODULE -c VGA_MODULE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -524,7 +529,7 @@ Info (12133): Instantiated megafunction "DrawSquare:ds|spriteDrawer:sp|sprite_ca
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "../cars2.mif"
+    Info (12134): Parameter "init_file" = "../zelda_sword.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -535,15 +540,15 @@ Info (12133): Instantiated megafunction "DrawSquare:ds|spriteDrawer:sp|sprite_ca
     Info (12134): Parameter "widthad_a" = "14"
     Info (12134): Parameter "width_a" = "24"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5jf1.tdf
-    Info (12023): Found entity 1: altsyncram_5jf1 File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 31
-Info (12128): Elaborating entity "altsyncram_5jf1" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated" File: /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_89g1.tdf
+    Info (12023): Found entity 1: altsyncram_89g1 File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_89g1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_89g1" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated" File: /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
     Info (12023): Found entity 1: decode_u0a File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/decode_u0a.tdf Line: 22
-Info (12128): Elaborating entity "decode_u0a" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|decode_u0a:rden_decode" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 40
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|decode_u0a:rden_decode" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_89g1.tdf Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3hb.tdf
     Info (12023): Found entity 1: mux_3hb File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/mux_3hb.tdf Line: 22
-Info (12128): Elaborating entity "mux_3hb" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|mux_3hb:mux2" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 41
+Info (12128): Elaborating entity "mux_3hb" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_89g1:auto_generated|mux_3hb:mux2" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_89g1.tdf Line: 41
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SYNC_N" is stuck at GND File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
@@ -552,16 +557,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 248 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 576 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 168 logic cells
+    Info (21061): Implemented 496 logic cells
     Info (21064): Implemented 48 RAM segments
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 1065 megabytes
-    Info: Processing ended: Sun Oct 20 18:27:39 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 1070 megabytes
+    Info: Processing ended: Sun Oct 20 21:08:56 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
 
 
