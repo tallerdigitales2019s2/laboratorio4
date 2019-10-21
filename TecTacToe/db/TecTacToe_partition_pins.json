@@ -116,6 +116,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "position_o[0]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "position_o[3]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

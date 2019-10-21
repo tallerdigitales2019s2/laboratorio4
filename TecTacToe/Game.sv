@@ -6,19 +6,18 @@ output logic [8:0] winner_move_o;
 output logic tie_o,current_player_o;
 output logic [2:0] current_screen_o;
 output logic [3:0]cursor_pos_o;
-assign cursor_pos_o=position_o;
 logic pressed_button;
 assign pressed_button = btn_i||btn_confirm_i;
 
 
 //cursor controller
-CursorController cc(.btn_i(btn_i), .btn_confirm_i(btn_confirm_i), .position_o(position_o), .confirm_o(confirm_o));
+CursorController cc(.btn_i(btn_i), .btn_confirm_i(btn_confirm_i), .position_o(cursor_pos_o), .confirm_o(confirm_o));
 //random
 RandomPosition rp(.current_pos_available(current_pos_available), .clk(clk), .reset(reset), .out(out_random),  .confirm(confirm_random));
 //mux cursor
 logic [3:0] cursor;
 logic confirm_position;
-assign cursor = position_o;
+assign cursor = cursor_pos_o;
 //assign cursor = (cursor_select_o)? position_o:out_random;
 assign confirm_position = (cursor_select_o)? confirm_o:confirm_random;
 //board

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TecTacToe
-Mon Oct 21 15:11:00 2019
+Mon Oct 21 15:24:43 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,8 +14,8 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |TecTacToe|Game:game|GameController:gc|current_state_o
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: Game:game|timer30:t30s
@@ -23,12 +23,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  15. Port Connectivity Checks: "Game:game|Board:b"
  16. Port Connectivity Checks: "Game:game|RandomPosition:rp|randomNumber:randomN"
  17. Port Connectivity Checks: "Game:game|RandomPosition:rp"
- 18. Port Connectivity Checks: "Game:game|CursorController:cc"
- 19. Port Connectivity Checks: "Game:game"
- 20. Port Connectivity Checks: "VGA_MODULE:vga"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 18. Port Connectivity Checks: "Game:game"
+ 19. Port Connectivity Checks: "VGA_MODULE:vga"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -54,14 +53,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 21 15:11:00 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 15:24:43 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; TecTacToe                                   ;
 ; Top-level Entity Name           ; TecTacToe                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 97                                          ;
-; Total pins                      ; 32                                          ;
+; Total registers                 ; 142                                         ;
+; Total pins                      ; 36                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -212,31 +211,31 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                              ;
-+---------------------------------------------+--------------------------------------------+
-; Resource                                    ; Usage                                      ;
-+---------------------------------------------+--------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 395                                        ;
-;                                             ;                                            ;
-; Combinational ALUT usage for logic          ; 757                                        ;
-;     -- 7 input functions                    ; 0                                          ;
-;     -- 6 input functions                    ; 30                                         ;
-;     -- 5 input functions                    ; 109                                        ;
-;     -- 4 input functions                    ; 189                                        ;
-;     -- <=3 input functions                  ; 429                                        ;
-;                                             ;                                            ;
-; Dedicated logic registers                   ; 97                                         ;
-;                                             ;                                            ;
-; I/O pins                                    ; 32                                         ;
-;                                             ;                                            ;
-; Total DSP Blocks                            ; 0                                          ;
-;                                             ;                                            ;
-; Maximum fan-out node                        ; VGA_MODULE:vga|CLK_DIVIDER:testclk|out_clk ;
-; Maximum fan-out                             ; 66                                         ;
-; Total fan-out                               ; 2847                                       ;
-; Average fan-out                             ; 3.10                                       ;
-+---------------------------------------------+--------------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 500       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 913       ;
+;     -- 7 input functions                    ; 1         ;
+;     -- 6 input functions                    ; 83        ;
+;     -- 5 input functions                    ; 133       ;
+;     -- 4 input functions                    ; 204       ;
+;     -- <=3 input functions                  ; 492       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 142       ;
+;                                             ;           ;
+; I/O pins                                    ; 36        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 73        ;
+; Total fan-out                               ; 3671      ;
+; Average fan-out                             ; 3.26      ;
++---------------------------------------------+-----------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -244,20 +243,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name      ; Library Name ;
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |TecTacToe                                  ; 757 (0)             ; 97 (0)                    ; 0                 ; 0          ; 32   ; 0            ; |TecTacToe                                                                                                                               ; TecTacToe        ; work         ;
-;    |Game:game|                              ; 5 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game                                                                                                                     ; Game             ; work         ;
-;       |CursorController:cc|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|CursorController:cc                                                                                                 ; CursorController ; work         ;
-;       |GameController:gc|                   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|GameController:gc                                                                                                   ; GameController   ; work         ;
-;    |VGA_MODULE:vga|                         ; 752 (0)             ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga                                                                                                                ; VGA_MODULE       ; work         ;
+; |TecTacToe                                  ; 913 (0)             ; 142 (0)                   ; 0                 ; 0          ; 36   ; 0            ; |TecTacToe                                                                                                                               ; TecTacToe        ; work         ;
+;    |Game:game|                              ; 154 (1)             ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game                                                                                                                     ; Game             ; work         ;
+;       |Board:b|                             ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|Board:b                                                                                                             ; Board            ; work         ;
+;       |CursorController:cc|                 ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|CursorController:cc                                                                                                 ; CursorController ; work         ;
+;       |DetectGameEnd:ge|                    ; 13 (9)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|DetectGameEnd:ge                                                                                                    ; DetectGameEnd    ; work         ;
+;          |DetectGameEndAux:comb_5|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|DetectGameEnd:ge|DetectGameEndAux:comb_5                                                                            ; DetectGameEndAux ; work         ;
+;          |DetectGameEndAux:comb_6|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|DetectGameEnd:ge|DetectGameEndAux:comb_6                                                                            ; DetectGameEndAux ; work         ;
+;          |DetectGameEndAux:comb_8|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|DetectGameEnd:ge|DetectGameEndAux:comb_8                                                                            ; DetectGameEndAux ; work         ;
+;          |DetectGameEndAux:comb_9|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|DetectGameEnd:ge|DetectGameEndAux:comb_9                                                                            ; DetectGameEndAux ; work         ;
+;       |GameController:gc|                   ; 17 (17)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|GameController:gc                                                                                                   ; GameController   ; work         ;
+;       |timer30:t30s|                        ; 44 (44)             ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|Game:game|timer30:t30s                                                                                                        ; timer30          ; work         ;
+;    |VGA_MODULE:vga|                         ; 759 (0)             ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga                                                                                                                ; VGA_MODULE       ; work         ;
 ;       |CLK_DIVIDER:testclk|                 ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|CLK_DIVIDER:testclk                                                                                            ; CLK_DIVIDER      ; work         ;
-;       |GameDrawer:comb_3|                   ; 664 (61)            ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3                                                                                              ; GameDrawer       ; work         ;
+;       |GameDrawer:comb_3|                   ; 670 (67)            ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3                                                                                              ; GameDrawer       ; work         ;
 ;          |lpm_divide:Mod0|                  ; 603 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3|lpm_divide:Mod0                                                                              ; lpm_divide       ; work         ;
 ;             |lpm_divide_iho:auto_generated| ; 603 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3|lpm_divide:Mod0|lpm_divide_iho:auto_generated                                                ; lpm_divide_iho   ; work         ;
 ;                |abs_divider_obg:divider|    ; 603 (8)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3|lpm_divide:Mod0|lpm_divide_iho:auto_generated|abs_divider_obg:divider                        ; abs_divider_obg  ; work         ;
 ;                   |alt_u_div_00f:divider|   ; 563 (563)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3|lpm_divide:Mod0|lpm_divide_iho:auto_generated|abs_divider_obg:divider|alt_u_div_00f:divider  ; alt_u_div_00f    ; work         ;
 ;                   |lpm_abs_4p9:my_abs_num|  ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|GameDrawer:comb_3|lpm_divide:Mod0|lpm_divide_iho:auto_generated|abs_divider_obg:divider|lpm_abs_4p9:my_abs_num ; lpm_abs_4p9      ; work         ;
-;       |SIGNAL_SYNC:sync|                    ; 86 (3)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync                                                                                               ; SIGNAL_SYNC      ; work         ;
-;          |H_COUNTER:h_signal|               ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync|H_COUNTER:h_signal                                                                            ; H_COUNTER        ; work         ;
+;       |SIGNAL_SYNC:sync|                    ; 87 (3)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync                                                                                               ; SIGNAL_SYNC      ; work         ;
+;          |H_COUNTER:h_signal|               ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync|H_COUNTER:h_signal                                                                            ; H_COUNTER        ; work         ;
 ;          |V_COUNTER:v_signal|               ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |TecTacToe|VGA_MODULE:vga|SIGNAL_SYNC:sync|V_COUNTER:v_signal                                                                            ; V_COUNTER        ; work         ;
 +---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -279,6 +285,34 @@ Encoding Type:  One-Hot
 +---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                   ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                    ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+; Game:game|Board:b|board_status_o[0][1]              ; Game:game|Board:b|board_status_o[0][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[1][1]              ; Game:game|Board:b|board_status_o[1][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[2][1]              ; Game:game|Board:b|board_status_o[2][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[3][1]              ; Game:game|Board:b|board_status_o[3][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[4][1]              ; Game:game|Board:b|board_status_o[4][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[5][1]              ; Game:game|Board:b|board_status_o[5][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[6][1]              ; Game:game|Board:b|board_status_o[6][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[7][1]              ; Game:game|Board:b|board_status_o[7][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[8][1]              ; Game:game|Board:b|board_status_o[8][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[1][0]              ; Game:game|Board:b|board_status_o[1][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[2][0]              ; Game:game|Board:b|board_status_o[2][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[0][0]              ; Game:game|Board:b|board_status_o[0][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[4][0]              ; Game:game|Board:b|board_status_o[4][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[5][0]              ; Game:game|Board:b|board_status_o[5][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[3][0]              ; Game:game|Board:b|board_status_o[3][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[7][0]              ; Game:game|Board:b|board_status_o[7][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[8][0]              ; Game:game|Board:b|board_status_o[8][1] ; yes                    ;
+; Game:game|Board:b|board_status_o[6][0]              ; Game:game|Board:b|board_status_o[6][1] ; yes                    ;
+; Number of user-specified and inferred latches = 18  ;                                        ;                        ;
++-----------------------------------------------------+----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +---------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                            ;
 +-------------------------------------------------+-------------------------------------------------------------+
@@ -288,52 +322,9 @@ Encoding Type:  One-Hot
 ; Game:game|GameController:gc|current_state_o~9   ; Lost fanout                                                 ;
 ; Game:game|GameController:gc|current_state_o~10  ; Lost fanout                                                 ;
 ; Game:game|GameController:gc|current_state_o~11  ; Lost fanout                                                 ;
-; Game:game|GameController:gc|current_state_o.001 ; Lost fanout                                                 ;
-; Game:game|GameController:gc|current_state_o.010 ; Lost fanout                                                 ;
-; Game:game|GameController:gc|current_state_o.011 ; Lost fanout                                                 ;
-; Game:game|GameController:gc|current_state_o.100 ; Lost fanout                                                 ;
-; Game:game|GameController:gc|cursor_select_o     ; Lost fanout                                                 ;
-; Game:game|GameController:gc|enable_board_o      ; Lost fanout                                                 ;
-; Game:game|timer30:t30s|out                      ; Lost fanout                                                 ;
-; Game:game|GameController:gc|current_player_o    ; Lost fanout                                                 ;
-; Game:game|timer30:t30s|sec[0..3]                ; Lost fanout                                                 ;
-; Game:game|timer30:t30s|counter[0..31]           ; Lost fanout                                                 ;
 ; Game:game|GameController:gc|current_state_o.101 ; Stuck at GND due to stuck port data_in                      ;
-; Game:game|GameController:gc|current_state_o.110 ; Stuck at GND due to stuck port data_in                      ;
-; Total Number of Removed Registers = 50          ;                                                             ;
+; Total Number of Removed Registers = 5           ;                                                             ;
 +-------------------------------------------------+-------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                ;
-+-------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; Register name                                   ; Reason for Removal        ; Registers Removed due to This Register                                       ;
-+-------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
-; Game:game|GameController:gc|current_state_o~9   ; Lost Fanouts              ; Game:game|GameController:gc|current_state_o.010,                             ;
-;                                                 ;                           ; Game:game|GameController:gc|current_state_o.011, Game:game|timer30:t30s|out, ;
-;                                                 ;                           ; Game:game|timer30:t30s|sec[0], Game:game|timer30:t30s|sec[3],                ;
-;                                                 ;                           ; Game:game|timer30:t30s|sec[2], Game:game|timer30:t30s|sec[1],                ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[20], Game:game|timer30:t30s|counter[22],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[19], Game:game|timer30:t30s|counter[31],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[30], Game:game|timer30:t30s|counter[29],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[28], Game:game|timer30:t30s|counter[27],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[26], Game:game|timer30:t30s|counter[25],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[24], Game:game|timer30:t30s|counter[23],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[21], Game:game|timer30:t30s|counter[0],       ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[3], Game:game|timer30:t30s|counter[4],        ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[5], Game:game|timer30:t30s|counter[6],        ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[7], Game:game|timer30:t30s|counter[8],        ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[2], Game:game|timer30:t30s|counter[18],       ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[1], Game:game|timer30:t30s|counter[9],        ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[10], Game:game|timer30:t30s|counter[11],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[12], Game:game|timer30:t30s|counter[13],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[14], Game:game|timer30:t30s|counter[15],      ;
-;                                                 ;                           ; Game:game|timer30:t30s|counter[16], Game:game|timer30:t30s|counter[17]       ;
-; Game:game|GameController:gc|current_state_o~11  ; Lost Fanouts              ; Game:game|GameController:gc|current_state_o.100                              ;
-; Game:game|GameController:gc|current_state_o.001 ; Lost Fanouts              ; Game:game|GameController:gc|enable_board_o                                   ;
-; Game:game|GameController:gc|current_state_o.101 ; Stuck at GND              ; Game:game|GameController:gc|current_state_o.110                              ;
-;                                                 ; due to stuck port data_in ;                                                                              ;
-+-------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -341,10 +332,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 97    ;
-; Number of registers using Synchronous Clear  ; 64    ;
+; Total registers                              ; 142   ;
+; Number of registers using Synchronous Clear  ; 96    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 37    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
@@ -356,10 +347,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TecTacToe|Game:game|timer30:t30s|sec[2]          ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TecTacToe|Game:game|Board:b|Mux1                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TecTacToe|Game:game|Board:b|board_status_o[0][1] ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TecTacToe|Game:game|GameController:gc|Selector3  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TecTacToe|Game:game|timer30:t30s|sec[1]          ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |TecTacToe|Game:game|Board:b|board_status_o[0][1] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |TecTacToe|Game:game|GameController:gc|Selector4  ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; No         ; |TecTacToe|Game:game|Board:b|Mux0                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -401,7 +392,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port                    ; Type   ; Severity ; Details                                                                             ;
 +-------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; cursor_i[3..1]          ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; current_pos_available_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -425,15 +415,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Game:game|CursorController:cc"                                                                                                      ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                       ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; position_o ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "position_o[3..1]" have no fanouts ;
-+------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Game:game"                                                                                            ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -445,7 +426,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; tie_o                  ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; current_screen_o[2..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; current_player_o       ; Output ; Info     ; Explicitly unconnected                                                              ;
-; cursor_pos_o[3..1]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -457,7 +437,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; current_screen_i[2..1] ; Input ; Info     ; Stuck at GND ;
 ; board_status_i[8..1]   ; Input ; Info     ; Stuck at GND ;
 ; board_status_i[0][1]   ; Input ; Info     ; Stuck at GND ;
-; cursor_pos_i[3..1]     ; Input ; Info     ; Stuck at GND ;
 +------------------------+-------+----------+--------------+
 
 
@@ -466,29 +445,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 97                          ;
+; arriav_ff             ; 142                         ;
+;     CLR               ; 5                           ;
+;     CLR SCLR          ; 32                          ;
 ;     ENA SCLR          ; 32                          ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 33                          ;
-; arriav_lcell_comb     ; 758                         ;
-;     arith             ; 376                         ;
+;     plain             ; 41                          ;
+; arriav_lcell_comb     ; 914                         ;
+;     arith             ; 408                         ;
 ;         0 data inputs ; 26                          ;
-;         1 data inputs ; 185                         ;
+;         1 data inputs ; 217                         ;
 ;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 35                          ;
 ;         4 data inputs ; 96                          ;
-;     normal            ; 382                         ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 505                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 132                         ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 93                          ;
-;         5 data inputs ; 109                         ;
-;         6 data inputs ; 30                          ;
-; boundary_port         ; 32                          ;
+;         2 data inputs ; 136                         ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 108                         ;
+;         5 data inputs ; 133                         ;
+;         6 data inputs ; 83                          ;
+; boundary_port         ; 36                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 75.80                       ;
-; Average LUT depth     ; 56.24                       ;
+; Average LUT depth     ; 46.81                       ;
 +-----------------------+-----------------------------+
 
 
@@ -507,7 +490,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 21 15:10:48 2019
+    Info: Processing started: Mon Oct 21 15:24:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TecTacToe -c TecTacToe
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -573,30 +556,28 @@ Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(24): created 
 Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(25): created implicit net for "line_b" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 25
 Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(26): created implicit net for "line_c" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 26
 Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(27): created implicit net for "line_d" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at TecTacToe.sv(24): created implicit net for "current_screen_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 24
-Warning (10236): Verilog HDL Implicit Net warning at TecTacToe.sv(24): created implicit net for "board_status_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 24
-Warning (10236): Verilog HDL Implicit Net warning at TecTacToe.sv(24): created implicit net for "cursor_pos" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 24
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(15): created implicit net for "position_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(15): created implicit net for "confirm_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 15
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(17): created implicit net for "current_pos_available" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 17
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(17): created implicit net for "reset" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 17
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(17): created implicit net for "out_random" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 17
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(17): created implicit net for "confirm_random" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 17
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(26): created implicit net for "reset_board_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(26): created implicit net for "enable_board_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 26
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(27): created implicit net for "current_pos_available_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(27): created implicit net for "valid_move_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(30): created implicit net for "game_end_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 30
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(30): created implicit net for "winner_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 30
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(34): created implicit net for "timer_30s_i" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 34
-Warning (10236): Verilog HDL Implicit Net warning at Game.sv(36): created implicit net for "cursor_select_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at TecTacToe.sv(25): created implicit net for "current_screen_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at TecTacToe.sv(25): created implicit net for "board_status_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(14): created implicit net for "confirm_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 14
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(16): created implicit net for "current_pos_available" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(16): created implicit net for "reset" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(16): created implicit net for "out_random" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(16): created implicit net for "confirm_random" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(25): created implicit net for "reset_board_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(25): created implicit net for "enable_board_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(26): created implicit net for "current_pos_available_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(26): created implicit net for "valid_move_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 26
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(29): created implicit net for "game_end_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(29): created implicit net for "winner_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(33): created implicit net for "timer_30s_i" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at Game.sv(35): created implicit net for "cursor_select_o" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 35
 Critical Warning (10846): Verilog HDL Instantiation warning at VGA_MODULE.sv(19): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 19
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(12): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 12
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(16): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 16
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(19): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 19
 Critical Warning (10846): Verilog HDL Instantiation warning at DetectGameEnd.sv(20): instance has no name File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 20
 Info (12127): Elaborating entity "TecTacToe" for the top level hierarchy
-Info (12128): Elaborating entity "VGA_MODULE" for hierarchy "VGA_MODULE:vga" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 24
+Info (12128): Elaborating entity "VGA_MODULE" for hierarchy "VGA_MODULE:vga" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 25
 Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(24): object "line_a" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 24
 Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(25): object "line_b" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 25
 Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(26): object "line_c" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 26
@@ -614,13 +595,13 @@ Info (12128): Elaborating entity "V_COUNTER" for hierarchy "VGA_MODULE:vga|SIGNA
 Info (12128): Elaborating entity "GameDrawer" for hierarchy "VGA_MODULE:vga|GameDrawer:comb_3" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/VGA_MODULE.sv Line: 19
 Warning (10230): Verilog HDL assignment warning at GameDrawer.sv(27): truncated value with size 32 to match size of target (8) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameDrawer.sv Line: 27
 Info (10264): Verilog HDL Case Statement information at GameDrawer.sv(31): all case item expressions in this case statement are onehot File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameDrawer.sv Line: 31
-Info (12128): Elaborating entity "Game" for hierarchy "Game:game" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 30
-Info (12128): Elaborating entity "CursorController" for hierarchy "Game:game|CursorController:cc" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 15
+Info (12128): Elaborating entity "Game" for hierarchy "Game:game" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 31
+Info (12128): Elaborating entity "CursorController" for hierarchy "Game:game|CursorController:cc" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 14
 Warning (10230): Verilog HDL assignment warning at CursorController.sv(13): truncated value with size 32 to match size of target (4) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 13
-Info (12128): Elaborating entity "RandomPosition" for hierarchy "Game:game|RandomPosition:rp" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 17
+Info (12128): Elaborating entity "RandomPosition" for hierarchy "Game:game|RandomPosition:rp" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 16
 Info (12128): Elaborating entity "randomNumber" for hierarchy "Game:game|RandomPosition:rp|randomNumber:randomN" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/randomNumber.sv Line: 3
 Info (12128): Elaborating entity "FF_D" for hierarchy "Game:game|RandomPosition:rp|randomNumber:randomN|FF_D:FFD0" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/randomNumber.sv Line: 17
-Info (12128): Elaborating entity "Board" for hierarchy "Game:game|Board:b" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 27
+Info (12128): Elaborating entity "Board" for hierarchy "Game:game|Board:b" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 26
 Warning (10240): Verilog HDL Always Construct warning at Board.sv(9): inferring latch(es) for variable "current_pos_available_o", which holds its previous value in one or more paths through the always construct File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 9
 Info (10041): Inferred latch for "current_pos_available_o" at Board.sv(32) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
 Info (10041): Inferred latch for "board_status_o[0][0]" at Board.sv(32) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
@@ -641,7 +622,7 @@ Info (10041): Inferred latch for "board_status_o[7][0]" at Board.sv(32) File: /h
 Info (10041): Inferred latch for "board_status_o[7][1]" at Board.sv(32) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
 Info (10041): Inferred latch for "board_status_o[8][0]" at Board.sv(32) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
 Info (10041): Inferred latch for "board_status_o[8][1]" at Board.sv(32) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
-Info (12128): Elaborating entity "DetectGameEnd" for hierarchy "Game:game|DetectGameEnd:ge" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 30
+Info (12128): Elaborating entity "DetectGameEnd" for hierarchy "Game:game|DetectGameEnd:ge" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 29
 Warning (10270): Verilog HDL Case Statement warning at DetectGameEnd.sv(36): incomplete case statement has no default case item File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
 Warning (10240): Verilog HDL Always Construct warning at DetectGameEnd.sv(36): inferring latch(es) for variable "winner_move_o", which holds its previous value in one or more paths through the always construct File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
 Info (10041): Inferred latch for "winner_move_o[0]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
@@ -654,8 +635,8 @@ Info (10041): Inferred latch for "winner_move_o[6]" at DetectGameEnd.sv(36) File
 Info (10041): Inferred latch for "winner_move_o[7]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
 Info (10041): Inferred latch for "winner_move_o[8]" at DetectGameEnd.sv(36) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 36
 Info (12128): Elaborating entity "DetectGameEndAux" for hierarchy "Game:game|DetectGameEnd:ge|DetectGameEndAux:comb_3" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEnd.sv Line: 12
-Info (12128): Elaborating entity "GameController" for hierarchy "Game:game|GameController:gc" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 37
-Info (12128): Elaborating entity "timer30" for hierarchy "Game:game|timer30:t30s" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 41
+Info (12128): Elaborating entity "GameController" for hierarchy "Game:game|GameController:gc" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 36
+Info (12128): Elaborating entity "timer30" for hierarchy "Game:game|timer30:t30s" File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Game.sv Line: 40
 Warning (10230): Verilog HDL assignment warning at timer30.sv(18): truncated value with size 32 to match size of target (4) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/timer30.sv Line: 18
 Warning (10230): Verilog HDL assignment warning at timer30.sv(23): truncated value with size 32 to match size of target (4) File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/timer30.sv Line: 23
 Info (278001): Inferred 1 megafunctions from design logic
@@ -677,21 +658,57 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_abs_on9 File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/lpm_abs_on9.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
     Info (12023): Found entity 1: lpm_abs_4p9 File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/db/lpm_abs_4p9.tdf Line: 22
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Game:game|Board:b|board_status_o[0][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[1][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[2][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[3][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[4][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[5][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[6][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[7][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[8][1] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|CursorController:cc|position_o[0] File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/CursorController.sv Line: 8
+Warning (13012): Latch Game:game|Board:b|board_status_o[1][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[2][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[0][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[4][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[5][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[3][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[7][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[8][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
+Warning (13012): Latch Game:game|Board:b|board_status_o[6][0] has unsafe behavior File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/Board.sv Line: 32
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Game:game|GameController:gc|enable_board_o File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv Line: 7
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SYNC_N" is stuck at GND File: /home/gsegura/Documents/taller/laboratorio4/TecTacToe/TecTacToe.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 47 registers lost all their fanouts during netlist optimizations.
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 807 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 968 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 775 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 1070 megabytes
-    Info: Processing ended: Mon Oct 21 15:11:00 2019
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 932 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 1073 megabytes
+    Info: Processing ended: Mon Oct 21 15:24:43 2019
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:29
 
 

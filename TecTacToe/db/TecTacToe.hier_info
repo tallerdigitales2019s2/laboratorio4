@@ -3,35 +3,39 @@ clk => VGA_MODULE:vga.clk
 clk => Game:game.clk
 btn_i => Game:game.btn_i
 btn_confirm_i => Game:game.btn_confirm_i
-vga_clock << VGA_MODULE:vga.vga_clock
-SYNC_N << VGA_MODULE:vga.SYNC_N
-v_en << VGA_MODULE:vga.v_en
-R[0] << VGA_MODULE:vga.R[0]
-R[1] << VGA_MODULE:vga.R[1]
-R[2] << VGA_MODULE:vga.R[2]
-R[3] << VGA_MODULE:vga.R[3]
-R[4] << VGA_MODULE:vga.R[4]
-R[5] << VGA_MODULE:vga.R[5]
-R[6] << VGA_MODULE:vga.R[6]
-R[7] << VGA_MODULE:vga.R[7]
-G[0] << VGA_MODULE:vga.G[0]
-G[1] << VGA_MODULE:vga.G[1]
-G[2] << VGA_MODULE:vga.G[2]
-G[3] << VGA_MODULE:vga.G[3]
-G[4] << VGA_MODULE:vga.G[4]
-G[5] << VGA_MODULE:vga.G[5]
-G[6] << VGA_MODULE:vga.G[6]
-G[7] << VGA_MODULE:vga.G[7]
-B[0] << VGA_MODULE:vga.B[0]
-B[1] << VGA_MODULE:vga.B[1]
-B[2] << VGA_MODULE:vga.B[2]
-B[3] << VGA_MODULE:vga.B[3]
-B[4] << VGA_MODULE:vga.B[4]
-B[5] << VGA_MODULE:vga.B[5]
-B[6] << VGA_MODULE:vga.B[6]
-B[7] << VGA_MODULE:vga.B[7]
-V_SYNC << VGA_MODULE:vga.V_SYNC
-H_SYNC << VGA_MODULE:vga.H_SYNC
+vga_clock <= VGA_MODULE:vga.vga_clock
+SYNC_N <= VGA_MODULE:vga.SYNC_N
+v_en <= VGA_MODULE:vga.v_en
+R[0] <= VGA_MODULE:vga.R[0]
+R[1] <= VGA_MODULE:vga.R[1]
+R[2] <= VGA_MODULE:vga.R[2]
+R[3] <= VGA_MODULE:vga.R[3]
+R[4] <= VGA_MODULE:vga.R[4]
+R[5] <= VGA_MODULE:vga.R[5]
+R[6] <= VGA_MODULE:vga.R[6]
+R[7] <= VGA_MODULE:vga.R[7]
+G[0] <= VGA_MODULE:vga.G[0]
+G[1] <= VGA_MODULE:vga.G[1]
+G[2] <= VGA_MODULE:vga.G[2]
+G[3] <= VGA_MODULE:vga.G[3]
+G[4] <= VGA_MODULE:vga.G[4]
+G[5] <= VGA_MODULE:vga.G[5]
+G[6] <= VGA_MODULE:vga.G[6]
+G[7] <= VGA_MODULE:vga.G[7]
+B[0] <= VGA_MODULE:vga.B[0]
+B[1] <= VGA_MODULE:vga.B[1]
+B[2] <= VGA_MODULE:vga.B[2]
+B[3] <= VGA_MODULE:vga.B[3]
+B[4] <= VGA_MODULE:vga.B[4]
+B[5] <= VGA_MODULE:vga.B[5]
+B[6] <= VGA_MODULE:vga.B[6]
+B[7] <= VGA_MODULE:vga.B[7]
+V_SYNC <= VGA_MODULE:vga.V_SYNC
+H_SYNC <= VGA_MODULE:vga.H_SYNC
+position_o[0] <= Game:game.cursor_pos_o[0]
+position_o[1] <= Game:game.cursor_pos_o[1]
+position_o[2] <= Game:game.cursor_pos_o[2]
+position_o[3] <= Game:game.cursor_pos_o[3]
 
 
 |TecTacToe|VGA_MODULE:vga
@@ -904,9 +908,9 @@ current_screen_o[1] <= GameController:gc.current_screen_o
 current_screen_o[2] <= GameController:gc.current_screen_o
 current_player_o <= GameController:gc.current_player_o
 cursor_pos_o[0] <= CursorController:cc.position_o
-cursor_pos_o[1] <= <GND>
-cursor_pos_o[2] <= <GND>
-cursor_pos_o[3] <= <GND>
+cursor_pos_o[1] <= CursorController:cc.position_o
+cursor_pos_o[2] <= CursorController:cc.position_o
+cursor_pos_o[3] <= CursorController:cc.position_o
 
 
 |TecTacToe|Game:game|CursorController:cc
