@@ -1,32 +1,76 @@
-module CursorController(btn_right_i, btn_down_i, btn_confirm_i, position_o, confirm_o);
-input logic btn_confirm_i, btn_down_i, btn_right_i;
+module CursorController(btn_i, btn_confirm_i, position_o, confirm_o);
+input logic btn_confirm_i, btn_i;
 output logic[3:0] position_o = 4'b0000;
 output logic confirm_o;
 logic [1:0] buttons ;
 
 assign confirm_o = btn_confirm_i;
-assign buttons = {btn_down_i,btn_right_i};
-
-always@(posedge btn_down_i or posedge btn_right_i )begin
-
-case (buttons) 
-  2'b01 : //derecha
-		case (position_o)
-		  4'b0010 : position_o <= 4'b0000;
-		  4'b0101 : position_o <= 4'b0011;
-		  4'b1000 : position_o <= 4'b0110;
-		  default:position_o<=position_o+4'b0001;
-		endcase
-	2'b10 : //abajo
-		case (position_o)
-		  4'b0110 : position_o <= 4'b0000;
-		  4'b0111 : position_o <= 4'b0001;
-		  4'b1000 : position_o <= 4'b0010;
-		  default:position_o<=position_o+4'b0011;
-		endcase
-	default: begin end
-endcase
+always@(posedge btn_i )
+begin
+if(position_o == 4'b1000)
+position_o = 4'b0000;
+else
+position_o = position_o+1;
 
 end
 
 endmodule
+
+
+
+//module CursorController(btn_right_i, btn_down_i, btn_confirm_i, position_o, confirm_o);
+//input logic btn_confirm_i, btn_down_i, btn_right_i;
+//output logic[3:0] position_o = 4'b0000;
+//output logic confirm_o;
+//logic [1:0] buttons ;
+//
+//assign confirm_o = btn_confirm_i;
+//assign buttons = {btn_down_i,btn_right_i};
+//
+//logic pressed_button;
+//assign pressed_button = btn_right_i||btn_down_i ||btn_confirm_i;
+//
+//always@(posedge pressed_button )
+//begin
+//case (buttons) 
+//  2'b01 : //derecha
+//		case (position_o)
+//			4'b0000 : position_o = 4'b0001;
+//			4'b0001 : position_o = 4'b0010;
+//			4'b0010 : position_o = 4'b0000;
+//			4'b0011 : position_o = 4'b0100;
+//			4'b0100 : position_o = 4'b0101;
+//			4'b0101 : position_o = 4'b0011;
+//			4'b0110 : position_o = 4'b0111;
+//			4'b0111 : position_o = 4'b1000;
+//			4'b1000 : position_o = 4'b0110;
+//		  	default:begin end
+//
+//		
+////		  4'b0010 : position_o = 4'b0000;
+////		  4'b0101 : position_o = 4'b0011;
+////		  4'b1000 : position_o = 4'b0110;
+////		  default:position_o=position_o+4'b0001;
+//		endcase
+//	2'b10 : //abajo
+//		case (position_o)
+//			4'b0000 : position_o = 4'b0011;
+//			4'b0001 : position_o = 4'b0100;
+//			4'b0010 : position_o = 4'b0101;
+//			4'b0011 : position_o = 4'b0110;
+//			4'b0100 : position_o = 4'b0111;
+//			4'b0101 : position_o = 4'b1000;
+//			4'b0110 : position_o = 4'b0000;
+//			4'b0111 : position_o = 4'b0001;
+//			4'b1000 : position_o = 4'b0010;
+////		  4'b0110 : position_o = 4'b0000;
+////		  4'b0111 : position_o = 4'b0001;
+////		  4'b1000 : position_o = 4'b0010;
+////		  default:position_o=position_o+4'b0011;
+//		endcase
+//	default: begin end
+//endcase
+//
+//end
+//
+//endmodule

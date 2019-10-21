@@ -1,0 +1,23 @@
+|buttons_test
+btn_confirm_i => btn_confirm.IN1
+btn_i => btn.IN1
+position_o[0] <= CursorController:comb_5.port2
+position_o[1] <= CursorController:comb_5.port2
+position_o[2] <= CursorController:comb_5.port2
+position_o[3] <= CursorController:comb_5.port2
+confirm_o <= CursorController:comb_5.port3
+
+
+|buttons_test|CursorController:comb_5
+btn_i => position_o[0]~reg0.CLK
+btn_i => position_o[1]~reg0.CLK
+btn_i => position_o[2]~reg0.CLK
+btn_i => position_o[3]~reg0.CLK
+btn_confirm_i => confirm_o.DATAIN
+position_o[0] <= position_o[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+position_o[1] <= position_o[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+position_o[2] <= position_o[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+position_o[3] <= position_o[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+confirm_o <= btn_confirm_i.DB_MAX_OUTPUT_PORT_TYPE
+
+
