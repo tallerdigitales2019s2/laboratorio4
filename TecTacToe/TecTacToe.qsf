@@ -100,7 +100,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE DrawSquare.sv
 set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE V_COUNTER_TB.sv
 set_global_assignment -name VERILOG_FILE pll_clock.v
-set_global_assignment -name VERILOG_FILE sprite_cars.v
 set_global_assignment -name SYSTEMVERILOG_FILE tb_timer30.sv
 set_global_assignment -name SYSTEMVERILOG_FILE randomNumber.sv
 set_global_assignment -name SYSTEMVERILOG_FILE CursorController.sv
@@ -112,6 +111,15 @@ set_global_assignment -name SYSTEMVERILOG_FILE DetectGameEndAux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE DetectGameEndAux_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE GameController.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Game.sv
+set_global_assignment -name SYSTEMVERILOG_FILE timer30.sv
+set_global_assignment -name SYSTEMVERILOG_FILE GameDrawer.sv
+set_location_assignment PIN_AA14 -to btn_confirm_i
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to btn_confirm_i
+set_location_assignment PIN_AA15 -to btn_down_i
+set_location_assignment PIN_W15 -to btn_right_i
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to btn_down_i
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to btn_right_i
+set_global_assignment -name SYSTEMVERILOG_FILE GameController_tb.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

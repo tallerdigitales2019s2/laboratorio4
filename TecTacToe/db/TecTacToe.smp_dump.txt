@@ -1,0 +1,10 @@
+
+State Machine - |TecTacToe|Game:game|GameController:gc|current_state_o
+Name current_state_o.110 current_state_o.101 current_state_o.100 current_state_o.011 current_state_o.010 current_state_o.001 current_state_o.000 
+current_state_o.000 0 0 0 0 0 0 0 
+current_state_o.001 0 0 0 0 0 1 1 
+current_state_o.010 0 0 0 0 1 0 1 
+current_state_o.011 0 0 0 1 0 0 1 
+current_state_o.100 0 0 1 0 0 0 1 
+current_state_o.101 0 1 0 0 0 0 1 
+current_state_o.110 1 0 0 0 0 0 1 

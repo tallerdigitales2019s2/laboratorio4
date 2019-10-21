@@ -1,11 +1,11 @@
-module VGA_MODULE( clk,vga_clock, SYNC_N, v_en, R, G ,B, V_SYNC, H_SYNC);
+module VGA_MODULE( clk,vga_clock, x,y, SYNC_N, v_en, R, G ,B, V_SYNC, H_SYNC);
 	input logic clk;
 	output logic vga_clock, SYNC_N, v_en, V_SYNC, H_SYNC;
 	output logic [7:0] R,G,B;
 	
 	
 	
-	integer x,y;
+	output integer x,y;
 	logic sq_a, sq_b, sq_c, sq_d;
 	
 	CLK_DIVIDER testclk (.in_clk(clk), .out_clk(vga_clock));

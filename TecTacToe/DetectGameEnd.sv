@@ -1,7 +1,7 @@
-module DetectGameEnd(current_board_i, game_end_o, tie_o, winner_o, winner_move);
+module DetectGameEnd(current_board_i, game_end_o, tie_o, winner_o, winner_move_o);
 input logic [8:0][1:0] current_board_i;
 output logic game_end_o,tie_o,winner_o;
-output logic [8:0] winner_move;
+output logic [8:0] winner_move_o;
 logic [7:0] win_v, winner_v;
 logic [8:0]active_positions;
 
@@ -35,14 +35,14 @@ always @*
 begin
 	case(win_v)
 		8'b00000000:begin end
-		8'b00000001:winner_move= 9'b111000000;
-		8'b00000010:winner_move= 9'b000111000;
-		8'b00000100:winner_move= 9'b000000111;
-		8'b00001000:winner_move= 9'b100100100;
-		8'b00010000:winner_move= 9'b010010010;
-		8'b00100000:winner_move= 9'b001001001;
-		8'b01000000:winner_move= 9'b100010001;
-		8'b10000000:winner_move= 9'b001010100;
+		8'b00000001:winner_move_o= 9'b111000000;
+		8'b00000010:winner_move_o= 9'b000111000;
+		8'b00000100:winner_move_o= 9'b000000111;
+		8'b00001000:winner_move_o= 9'b100100100;
+		8'b00010000:winner_move_o= 9'b010010010;
+		8'b00100000:winner_move_o= 9'b001001001;
+		8'b01000000:winner_move_o= 9'b100010001;
+		8'b10000000:winner_move_o= 9'b001010100;
 	endcase
 end
 

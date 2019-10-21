@@ -1,0 +1,16 @@
+module GameDrawer(clk, x_i, y_i,board_status_i,current_screen_i,R_o,G_o,B_o);
+input logic clk;
+input integer x_i,y_i;
+input logic [8:0][1:0] board_status_i ;
+input logic [2:0] current_screen_i;
+output logic [7:0]R_o,G_o,B_o;
+
+	always@(*)
+		case(current_screen_i)
+		default:begin 
+		R_o=255;
+		G_o=255;
+		B_o=255 ;
+		end
+		endcase
+endmodule

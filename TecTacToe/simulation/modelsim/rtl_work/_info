@@ -8,55 +8,55 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/gsegura/Documents/taller/laboratorio4/TecTacToe/simulation/modelsim
-vDetectGameEndAux
+vGameController
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1571078736
+Z2 !s110 1571677708
 !i10b 1
-!s100 mU[L^[fi]bT?AbAfa7Rh>3
-I:Qm_5Lnnm8?WL1CUG7Bzh1
+!s100 AJZY0;O``kH6DA3U1[gOd2
+IGicQUE6lh9Cll_c?cggK52
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 DetectGameEndAux_sv_unit
+!s105 GameController_sv_unit
 S1
 R0
-w1570670755
-8/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv
-F/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv
+w1571677626
+8/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv
+F/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv
 L0 1
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1571078736.000000
-!s107 /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe|/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux.sv|
+Z5 !s108 1571677708.000000
+!s107 /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe|/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController.sv|
 !i113 1
 Z6 o-sv -work work
 Z7 !s92 -sv -work work +incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe
 Z8 tCvgOpt 0
-n@detect@game@end@aux
-vDetectGameEndAux_tb
+n@game@controller
+vGameController_tb
 R1
 R2
 !i10b 1
-!s100 BOP77XA1>=j<F:dOOC3jV1
-I@A7JCIO0=`T46gVe[VIB>3
+!s100 ejLPT?cb^;U;XnFCoG7OU0
+I49RQ^0C5hQ;_VB]40[[U60
 R3
-!s105 DetectGameEndAux_tb_sv_unit
+!s105 GameController_tb_sv_unit
 S1
 R0
-w1571078721
-8/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv
-F/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv
-L0 45
+w1571677678
+8/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController_tb.sv
+F/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController_tb.sv
+L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe|/home/gsegura/Documents/taller/laboratorio4/TecTacToe/DetectGameEndAux_tb.sv|
+!s107 /home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/gsegura/Documents/taller/laboratorio4/TecTacToe|/home/gsegura/Documents/taller/laboratorio4/TecTacToe/GameController_tb.sv|
 !i113 1
 R6
 R7
 R8
-n@detect@game@end@aux_tb
+n@game@controller_tb
