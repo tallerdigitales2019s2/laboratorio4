@@ -92,7 +92,6 @@ set_location_assignment PIN_A11 -to vga_clock
 set_location_assignment PIN_C10 -to SYNC_N
 set_location_assignment PIN_F10 -to v_en
 set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
-set_global_assignment -name QIP_FILE test3.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -132,4 +131,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vga_clock
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BLANK_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SYNC_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to v_en
+set_global_assignment -name SYSTEMVERILOG_FILE DrawSquare.sv
+set_global_assignment -name SYSTEMVERILOG_FILE spriteDrawer.sv
+set_global_assignment -name QIP_FILE sprite_cars.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

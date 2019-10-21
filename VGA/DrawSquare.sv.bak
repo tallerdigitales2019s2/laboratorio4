@@ -1,0 +1,21 @@
+module DrawSquare (clk,x,y R,G,B);
+input clk;
+input integer x,y;
+output logic [7:0] R,G,B;
+
+always @(posedge clk)
+begin
+if((x>=0) and(x<=100))
+begin 
+R=200;
+end
+else
+begin
+R=0;
+G=0;
+B=0;
+end
+
+end
+
+endmodule

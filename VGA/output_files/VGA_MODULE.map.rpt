@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA_MODULE
-Sat Oct 19 12:51:51 2019
+Sun Oct 20 18:27:39 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,14 +13,19 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. General Register Statistics
- 10. Source assignments for test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated
- 11. Parameter Settings for User Entity Instance: test3:coso|altsyncram:altsyncram_component
- 12. altsyncram Parameter Settings by Entity Instance
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated
+ 15. Parameter Settings for User Entity Instance: DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "DrawSquare:ds"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -46,17 +51,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 19 12:51:51 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 20 18:27:39 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; VGA_MODULE                                  ;
 ; Top-level Entity Name           ; VGA_MODULE                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 67                                          ;
+; Total registers                 ; 125                                         ;
 ; Total pins                      ; 31                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total block memory bits         ; 240,000                                     ;
+; Total DSP Blocks                ; 1                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -170,79 +175,122 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; VGA_MODULE.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv                                     ;         ;
-; H_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/intelFPGA_lite/18.1/VGA/H_COUNTER.sv                                      ;         ;
-; V_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/intelFPGA_lite/18.1/VGA/V_COUNTER.sv                                      ;         ;
-; SIGNAL_SYNC.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/intelFPGA_lite/18.1/VGA/SIGNAL_SYNC.sv                                    ;         ;
-; CLK_DIVIDER.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/intelFPGA_lite/18.1/VGA/CLK_DIVIDER.sv                                    ;         ;
-; test3.v                          ; yes             ; User Wizard-Generated File             ; C:/intelFPGA_lite/18.1/VGA/test3.v                                           ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_q0i1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf                            ;         ;
-; /users/bryan/desktop/sprite2.mif ; yes             ; Auto-Found Memory Initialization File  ; /users/bryan/desktop/sprite2.mif                                             ;         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------+---------+
+; VGA_MODULE.sv                    ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv          ;         ;
+; H_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/H_COUNTER.sv           ;         ;
+; V_COUNTER.sv                     ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/V_COUNTER.sv           ;         ;
+; SIGNAL_SYNC.sv                   ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/SIGNAL_SYNC.sv         ;         ;
+; CLK_DIVIDER.sv                   ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/CLK_DIVIDER.sv         ;         ;
+; DrawSquare.sv                    ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/DrawSquare.sv          ;         ;
+; spriteDrawer.sv                  ; yes             ; User SystemVerilog HDL File            ; /home/gsegura/Documents/taller/laboratorio4/VGA/spriteDrawer.sv        ;         ;
+; sprite_cars.v                    ; yes             ; User Wizard-Generated File             ; /home/gsegura/Documents/taller/laboratorio4/VGA/sprite_cars.v          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /opt/altera/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_5jf1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf ;         ;
+; cars2.mif                        ; yes             ; Auto-Found Memory Initialization File  ; /home/gsegura/Documents/taller/laboratorio4/VGA/cars2.mif              ;         ;
+; db/decode_u0a.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/decode_u0a.tdf      ;         ;
+; db/mux_3hb.tdf                   ; yes             ; Auto-Generated Megafunction            ; /home/gsegura/Documents/taller/laboratorio4/VGA/db/mux_3hb.tdf         ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                               ;
-+---------------------------------------------+-----------------------------+
-; Resource                                    ; Usage                       ;
-+---------------------------------------------+-----------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 61                          ;
-;                                             ;                             ;
-; Combinational ALUT usage for logic          ; 105                         ;
-;     -- 7 input functions                    ; 0                           ;
-;     -- 6 input functions                    ; 17                          ;
-;     -- 5 input functions                    ; 8                           ;
-;     -- 4 input functions                    ; 7                           ;
-;     -- <=3 input functions                  ; 73                          ;
-;                                             ;                             ;
-; Dedicated logic registers                   ; 67                          ;
-;                                             ;                             ;
-; I/O pins                                    ; 31                          ;
-;                                             ;                             ;
-; Total DSP Blocks                            ; 0                           ;
-;                                             ;                             ;
-; Maximum fan-out node                        ; CLK_DIVIDER:testclk|out_clk ;
-; Maximum fan-out                             ; 66                          ;
-; Total fan-out                               ; 591                         ;
-; Average fan-out                             ; 2.53                        ;
-+---------------------------------------------+-----------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 87        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 161       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 12        ;
+;     -- 5 input functions                    ; 6         ;
+;     -- 4 input functions                    ; 7         ;
+;     -- <=3 input functions                  ; 136       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 125       ;
+;                                             ;           ;
+; I/O pins                                    ; 31        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 240000    ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 1         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 108       ;
+; Total fan-out                               ; 1586      ;
+; Average fan-out                             ; 3.99      ;
++---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-------------+--------------+
-; |VGA_MODULE                ; 105 (13)            ; 67 (0)                    ; 0                 ; 0          ; 31   ; 0            ; |VGA_MODULE                                     ; VGA_MODULE  ; work         ;
-;    |CLK_DIVIDER:testclk|   ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|CLK_DIVIDER:testclk                 ; CLK_DIVIDER ; work         ;
-;    |SIGNAL_SYNC:sync|      ; 90 (4)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync                    ; SIGNAL_SYNC ; work         ;
-;       |H_COUNTER:h_signal| ; 44 (44)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|H_COUNTER:h_signal ; H_COUNTER   ; work         ;
-;       |V_COUNTER:v_signal| ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|V_COUNTER:v_signal ; V_COUNTER   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name     ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |VGA_MODULE                                     ; 161 (0)             ; 125 (0)                   ; 240000            ; 1          ; 31   ; 0            ; |VGA_MODULE                                                                                                                    ; VGA_MODULE      ; work         ;
+;    |CLK_DIVIDER:testclk|                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|CLK_DIVIDER:testclk                                                                                                ; CLK_DIVIDER     ; work         ;
+;    |DrawSquare:ds|                              ; 71 (57)             ; 58 (56)                   ; 240000            ; 1          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds                                                                                                      ; DrawSquare      ; work         ;
+;       |spriteDrawer:sp|                         ; 14 (14)             ; 2 (0)                     ; 240000            ; 1          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp                                                                                      ; spriteDrawer    ; work         ;
+;          |sprite_cars:sprite_c2|                ; 0 (0)               ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2                                                                ; sprite_cars     ; work         ;
+;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 2 (0)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;                |altsyncram_5jf1:auto_generated| ; 0 (0)               ; 2 (2)                     ; 240000            ; 0          ; 0    ; 0            ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated ; altsyncram_5jf1 ; work         ;
+;    |SIGNAL_SYNC:sync|                           ; 88 (4)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync                                                                                                   ; SIGNAL_SYNC     ; work         ;
+;       |H_COUNTER:h_signal|                      ; 42 (42)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|H_COUNTER:h_signal                                                                                ; H_COUNTER       ; work         ;
+;       |V_COUNTER:v_signal|                      ; 42 (42)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_MODULE|SIGNAL_SYNC:sync|V_COUNTER:v_signal                                                                                ; V_COUNTER       ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                    ;
-+--------+--------------+---------+--------------+--------------+------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+------------------------+-----------------+
-; Altera ; ROM: 1-PORT  ; 18.1    ; N/A          ; N/A          ; |VGA_MODULE|test3:coso ; test3.v         ;
-+--------+--------------+---------+--------------+--------------+------------------------+-----------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
+; Name                                                                                                                          ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF          ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
+; DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 10000        ; 24           ; --           ; --           ; 240000 ; ../cars2.mif ;
++-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+--------------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                             ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                 ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-----------------+
+; Altera ; ROM: 1-PORT  ; 18.1    ; N/A          ; N/A          ; |VGA_MODULE|DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2 ; sprite_cars.v   ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------+-----------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; DrawSquare:ds|sp_y[14..31]             ; Lost fanout        ;
+; DrawSquare:ds|sp_x[18..31]             ; Lost fanout        ;
+; Total Number of Removed Registers = 32 ;                    ;
++----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -250,104 +298,124 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 67    ;
-; Number of registers using Synchronous Clear  ; 64    ;
+; Total registers                              ; 125   ;
+; Number of registers using Synchronous Clear  ; 88    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 64    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Source assignments for test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------+
-; Assignment                      ; Value              ; From ; To                                 ;
-+---------------------------------+--------------------+------+------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
-+---------------------------------+--------------------+------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |VGA_MODULE|DrawSquare:ds|B[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: test3:coso|altsyncram:altsyncram_component           ;
-+------------------------------------+---------------------------------------------+----------------+
-; Parameter Name                     ; Value                                       ; Type           ;
-+------------------------------------+---------------------------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                                           ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                                          ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                         ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                                          ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                         ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                                           ; Untyped        ;
-; OPERATION_MODE                     ; ROM                                         ; Untyped        ;
-; WIDTH_A                            ; 8                                           ; Signed Integer ;
-; WIDTHAD_A                          ; 8                                           ; Signed Integer ;
-; NUMWORDS_A                         ; 256                                         ; Signed Integer ;
-; OUTDATA_REG_A                      ; CLOCK0                                      ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                                        ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                                        ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                                        ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                                        ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                                        ; Untyped        ;
-; WIDTH_B                            ; 1                                           ; Untyped        ;
-; WIDTHAD_B                          ; 1                                           ; Untyped        ;
-; NUMWORDS_B                         ; 1                                           ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1                                      ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                      ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                                      ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                                      ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                                      ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                                        ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                                        ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                                        ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                                        ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                                        ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                                           ; Signed Integer ;
-; WIDTH_BYTEENA_B                    ; 1                                           ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                                        ; Untyped        ;
-; BYTE_SIZE                          ; 8                                           ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                        ; Untyped        ;
-; INIT_FILE                          ; ../../../../Users/bryan/Desktop/sprite2.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                      ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                                           ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                                      ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                      ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                      ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                      ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                             ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                             ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                                       ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                       ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                                           ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone V                                   ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_q0i1                             ; Untyped        ;
-+------------------------------------+---------------------------------------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                          ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                           ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                 ;
++------------------------------------+----------------------+----------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                       ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                              ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                              ;
+; WIDTH_A                            ; 24                   ; Signed Integer                                                       ;
+; WIDTHAD_A                          ; 14                   ; Signed Integer                                                       ;
+; NUMWORDS_A                         ; 10000                ; Signed Integer                                                       ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                              ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                              ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                              ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                              ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                              ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                              ;
+; WIDTH_B                            ; 1                    ; Untyped                                                              ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                              ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                              ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                              ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                              ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                              ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                              ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                              ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                              ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                              ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                              ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                              ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                              ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                              ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                              ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                              ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                              ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                              ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                              ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                              ;
+; INIT_FILE                          ; ../cars2.mif         ; Untyped                                                              ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                              ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                              ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                              ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                              ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                              ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                              ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                              ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                              ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                              ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                              ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                              ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                              ;
+; CBXI_PARAMETER                     ; altsyncram_5jf1      ; Untyped                                                              ;
++------------------------------------+----------------------+----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                       ;
-+-------------------------------------------+--------------------------------------------+
-; Name                                      ; Value                                      ;
-+-------------------------------------------+--------------------------------------------+
-; Number of entity instances                ; 1                                          ;
-; Entity Instance                           ; test3:coso|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                                        ;
-;     -- WIDTH_A                            ; 8                                          ;
-;     -- NUMWORDS_A                         ; 256                                        ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                     ;
-;     -- WIDTH_B                            ; 1                                          ;
-;     -- NUMWORDS_B                         ; 1                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
-+-------------------------------------------+--------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                ;
++-------------------------------------------+-------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                               ;
++-------------------------------------------+-------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                   ;
+; Entity Instance                           ; DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                 ;
+;     -- WIDTH_A                            ; 24                                                                                  ;
+;     -- NUMWORDS_A                         ; 10000                                                                               ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                              ;
+;     -- WIDTH_B                            ; 1                                                                                   ;
+;     -- NUMWORDS_B                         ; 1                                                                                   ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                              ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                        ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                           ;
++-------------------------------------------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DrawSquare:ds"                                                                                                         ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; R    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "R[31..8]" have no fanouts ;
+; G    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "G[31..8]" have no fanouts ;
+; B    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (8 bits) it drives; bit(s) "B[31..8]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -355,24 +423,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 67                          ;
+; arriav_ff             ; 125                         ;
+;     ENA               ; 32                          ;
 ;     ENA SCLR          ; 32                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 107                         ;
-;     arith             ; 64                          ;
-;         1 data inputs ; 64                          ;
-;     normal            ; 43                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
-;         3 data inputs ; 7                           ;
+;     SCLR              ; 56                          ;
+;     plain             ; 5                           ;
+; arriav_lcell_comb     ; 162                         ;
+;     arith             ; 105                         ;
+;         1 data inputs ; 90                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 57                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         3 data inputs ; 27                          ;
 ;         4 data inputs ; 7                           ;
-;         5 data inputs ; 8                           ;
-;         6 data inputs ; 17                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 12                          ;
+; arriav_mac            ; 1                           ;
 ; boundary_port         ; 31                          ;
+; stratixv_ram_block    ; 48                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 3.37                        ;
+; Average LUT depth     ; 2.17                        ;
 +-----------------------+-----------------------------+
 
 
@@ -391,112 +463,105 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Oct 19 12:51:39 2019
+    Info: Processing started: Sun Oct 20 18:27:28 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_MODULE -c VGA_MODULE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file pll_clock/pll_clock_0002.v
-    Info (12023): Found entity 1: pll_clock_0002 File: C:/intelFPGA_lite/18.1/VGA/pll_clock/pll_clock_0002.v Line: 2
+Warning (12019): Can't analyze file -- file pll_clock/pll_clock_0002.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file pll_clock.v
-    Info (12023): Found entity 1: pll_clock File: C:/intelFPGA_lite/18.1/VGA/pll_clock.v Line: 8
-Info (12021): Found 1 design units, including 1 entities, in source file vga_module.sv
-    Info (12023): Found entity 1: VGA_MODULE File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file h_counter.sv
-    Info (12023): Found entity 1: H_COUNTER File: C:/intelFPGA_lite/18.1/VGA/H_COUNTER.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file v_counter.sv
-    Info (12023): Found entity 1: V_COUNTER File: C:/intelFPGA_lite/18.1/VGA/V_COUNTER.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file h_counter_tb.sv
-    Info (12023): Found entity 1: H_COUNTER_TB File: C:/intelFPGA_lite/18.1/VGA/H_COUNTER_TB.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file v_counter_tb.sv
-    Info (12023): Found entity 1: V_COUNTER_TB File: C:/intelFPGA_lite/18.1/VGA/V_COUNTER_TB.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file signal_sync.sv
-    Info (12023): Found entity 1: SIGNAL_SYNC File: C:/intelFPGA_lite/18.1/VGA/SIGNAL_SYNC.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vga_module_tb.sv
-    Info (12023): Found entity 1: VGA_MODULE_TB File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE_TB.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file clk_divider.sv
-    Info (12023): Found entity 1: CLK_DIVIDER File: C:/intelFPGA_lite/18.1/VGA/CLK_DIVIDER.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: C:/intelFPGA_lite/18.1/VGA/vgaController.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file test3.v
-    Info (12023): Found entity 1: test3 File: C:/intelFPGA_lite/18.1/VGA/test3.v Line: 39
-Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(17): created implicit net for "line_a" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 17
-Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(18): created implicit net for "line_b" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 18
-Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(19): created implicit net for "line_c" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 19
-Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(20): created implicit net for "line_d" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 20
+    Info (12023): Found entity 1: pll_clock File: /home/gsegura/Documents/taller/laboratorio4/VGA/pll_clock.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file VGA_MODULE.sv
+    Info (12023): Found entity 1: VGA_MODULE File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file H_COUNTER.sv
+    Info (12023): Found entity 1: H_COUNTER File: /home/gsegura/Documents/taller/laboratorio4/VGA/H_COUNTER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file V_COUNTER.sv
+    Info (12023): Found entity 1: V_COUNTER File: /home/gsegura/Documents/taller/laboratorio4/VGA/V_COUNTER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file H_COUNTER_TB.sv
+    Info (12023): Found entity 1: H_COUNTER_TB File: /home/gsegura/Documents/taller/laboratorio4/VGA/H_COUNTER_TB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file V_COUNTER_TB.sv
+    Info (12023): Found entity 1: V_COUNTER_TB File: /home/gsegura/Documents/taller/laboratorio4/VGA/V_COUNTER_TB.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file SIGNAL_SYNC.sv
+    Info (12023): Found entity 1: SIGNAL_SYNC File: /home/gsegura/Documents/taller/laboratorio4/VGA/SIGNAL_SYNC.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file VGA_MODULE_TB.sv
+    Info (12023): Found entity 1: VGA_MODULE_TB File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE_TB.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file CLK_DIVIDER.sv
+    Info (12023): Found entity 1: CLK_DIVIDER File: /home/gsegura/Documents/taller/laboratorio4/VGA/CLK_DIVIDER.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vgaController.sv
+    Info (12023): Found entity 1: vgaController File: /home/gsegura/Documents/taller/laboratorio4/VGA/vgaController.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file DrawSquare.sv
+    Info (12023): Found entity 1: DrawSquare File: /home/gsegura/Documents/taller/laboratorio4/VGA/DrawSquare.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file spriteDrawer.sv
+    Info (12023): Found entity 1: spriteDrawer File: /home/gsegura/Documents/taller/laboratorio4/VGA/spriteDrawer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sprite_cars.v
+    Info (12023): Found entity 1: sprite_cars File: /home/gsegura/Documents/taller/laboratorio4/VGA/sprite_cars.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(16): created implicit net for "line_a" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(17): created implicit net for "line_b" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 17
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(18): created implicit net for "line_c" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 18
+Warning (10236): Verilog HDL Implicit Net warning at VGA_MODULE.sv(19): created implicit net for "line_d" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 19
 Info (12127): Elaborating entity "VGA_MODULE" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(17): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 17
-Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(18): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 18
-Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(19): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 19
-Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(20): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 20
-Warning (10034): Output port "SYNC_N" at VGA_MODULE.sv(1) has no driver File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-Warning (10034): Output port "test_clk" at VGA_MODULE.sv(1) has no driver File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-Info (12128): Elaborating entity "CLK_DIVIDER" for hierarchy "CLK_DIVIDER:testclk" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 8
-Info (12128): Elaborating entity "SIGNAL_SYNC" for hierarchy "SIGNAL_SYNC:sync" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 10
-Info (12128): Elaborating entity "H_COUNTER" for hierarchy "SIGNAL_SYNC:sync|H_COUNTER:h_signal" File: C:/intelFPGA_lite/18.1/VGA/SIGNAL_SYNC.sv Line: 8
-Warning (10036): Verilog HDL or VHDL warning at H_COUNTER.sv(6): object "BACK_PORCH" assigned a value but never read File: C:/intelFPGA_lite/18.1/VGA/H_COUNTER.sv Line: 6
-Info (12128): Elaborating entity "V_COUNTER" for hierarchy "SIGNAL_SYNC:sync|V_COUNTER:v_signal" File: C:/intelFPGA_lite/18.1/VGA/SIGNAL_SYNC.sv Line: 9
-Info (12128): Elaborating entity "test3" for hierarchy "test3:coso" File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 12
-Info (12128): Elaborating entity "altsyncram" for hierarchy "test3:coso|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/18.1/VGA/test3.v Line: 81
-Info (12130): Elaborated megafunction instantiation "test3:coso|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/18.1/VGA/test3.v Line: 81
-Info (12133): Instantiated megafunction "test3:coso|altsyncram:altsyncram_component" with the following parameter: File: C:/intelFPGA_lite/18.1/VGA/test3.v Line: 81
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(16): object "line_a" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 16
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(17): object "line_b" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 17
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(18): object "line_c" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 18
+Warning (10036): Verilog HDL or VHDL warning at VGA_MODULE.sv(19): object "line_d" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(16): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(17): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(18): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 18
+Warning (10230): Verilog HDL assignment warning at VGA_MODULE.sv(19): truncated value with size 32 to match size of target (1) File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 19
+Warning (10034): Output port "SYNC_N" at VGA_MODULE.sv(1) has no driver File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
+Warning (10034): Output port "test_clk" at VGA_MODULE.sv(1) has no driver File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
+Info (12128): Elaborating entity "CLK_DIVIDER" for hierarchy "CLK_DIVIDER:testclk" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 7
+Info (12128): Elaborating entity "SIGNAL_SYNC" for hierarchy "SIGNAL_SYNC:sync" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 9
+Info (12128): Elaborating entity "H_COUNTER" for hierarchy "SIGNAL_SYNC:sync|H_COUNTER:h_signal" File: /home/gsegura/Documents/taller/laboratorio4/VGA/SIGNAL_SYNC.sv Line: 8
+Warning (10036): Verilog HDL or VHDL warning at H_COUNTER.sv(6): object "BACK_PORCH" assigned a value but never read File: /home/gsegura/Documents/taller/laboratorio4/VGA/H_COUNTER.sv Line: 6
+Info (12128): Elaborating entity "V_COUNTER" for hierarchy "SIGNAL_SYNC:sync|V_COUNTER:v_signal" File: /home/gsegura/Documents/taller/laboratorio4/VGA/SIGNAL_SYNC.sv Line: 9
+Info (12128): Elaborating entity "DrawSquare" for hierarchy "DrawSquare:ds" File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 12
+Info (12128): Elaborating entity "spriteDrawer" for hierarchy "DrawSquare:ds|spriteDrawer:sp" File: /home/gsegura/Documents/taller/laboratorio4/VGA/DrawSquare.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at spriteDrawer.sv(6): truncated value with size 32 to match size of target (14) File: /home/gsegura/Documents/taller/laboratorio4/VGA/spriteDrawer.sv Line: 6
+Info (12128): Elaborating entity "sprite_cars" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2" File: /home/gsegura/Documents/taller/laboratorio4/VGA/spriteDrawer.sv Line: 7
+Info (12128): Elaborating entity "altsyncram" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" File: /home/gsegura/Documents/taller/laboratorio4/VGA/sprite_cars.v Line: 81
+Info (12130): Elaborated megafunction instantiation "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" File: /home/gsegura/Documents/taller/laboratorio4/VGA/sprite_cars.v Line: 81
+Info (12133): Instantiated megafunction "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component" with the following parameter: File: /home/gsegura/Documents/taller/laboratorio4/VGA/sprite_cars.v Line: 81
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "../../../../Users/bryan/Desktop/sprite2.mif"
+    Info (12134): Parameter "init_file" = "../cars2.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "numwords_a" = "10000"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
-    Info (12134): Parameter "widthad_a" = "8"
-    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "widthad_a" = "14"
+    Info (12134): Parameter "width_a" = "24"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q0i1.tdf
-    Info (12023): Found entity 1: altsyncram_q0i1 File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_q0i1" for hierarchy "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[0]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 34
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[1]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 56
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[2]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 78
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[3]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 100
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[4]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 122
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[5]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 144
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[6]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 166
-        Warning (14320): Synthesized away node "test3:coso|altsyncram:altsyncram_component|altsyncram_q0i1:auto_generated|q_a[7]" File: C:/intelFPGA_lite/18.1/VGA/db/altsyncram_q0i1.tdf Line: 188
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5jf1.tdf
+    Info (12023): Found entity 1: altsyncram_5jf1 File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 31
+Info (12128): Elaborating entity "altsyncram_5jf1" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated" File: /opt/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_u0a.tdf
+    Info (12023): Found entity 1: decode_u0a File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/decode_u0a.tdf Line: 22
+Info (12128): Elaborating entity "decode_u0a" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|decode_u0a:rden_decode" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3hb.tdf
+    Info (12023): Found entity 1: mux_3hb File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/mux_3hb.tdf Line: 22
+Info (12128): Elaborating entity "mux_3hb" for hierarchy "DrawSquare:ds|spriteDrawer:sp|sprite_cars:sprite_c2|altsyncram:altsyncram_component|altsyncram_5jf1:auto_generated|mux_3hb:mux2" File: /home/gsegura/Documents/taller/laboratorio4/VGA/db/altsyncram_5jf1.tdf Line: 41
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "SYNC_N" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "R[4]" is stuck at VCC File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[0]" is stuck at VCC File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[1]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[2]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[3]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "G[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[0]" is stuck at VCC File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[1]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[2]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[3]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "B[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
-    Warning (13410): Pin "test_clk" is stuck at GND File: C:/intelFPGA_lite/18.1/VGA/VGA_MODULE.sv Line: 1
+    Warning (13410): Pin "SYNC_N" is stuck at GND File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
+    Warning (13410): Pin "test_clk" is stuck at GND File: /home/gsegura/Documents/taller/laboratorio4/VGA/VGA_MODULE.sv Line: 1
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 248 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 106 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Sat Oct 19 12:51:51 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 168 logic cells
+    Info (21064): Implemented 48 RAM segments
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 1065 megabytes
+    Info: Processing ended: Sun Oct 20 18:27:39 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:28
 
 

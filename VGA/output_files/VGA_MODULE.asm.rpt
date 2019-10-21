@@ -1,5 +1,5 @@
 Assembler report for VGA_MODULE
-Sat Oct 19 12:52:39 2019
+Sun Oct 20 18:28:26 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/intelFPGA_lite/18.1/VGA/output_files/VGA_MODULE.sof
+  5. Assembler Device Options: VGA_MODULE.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Oct 19 12:52:39 2019 ;
+; Assembler Status      ; Successful - Sun Oct 20 18:28:26 2019 ;
 ; Revision Name         ; VGA_MODULE                            ;
 ; Top-level Entity Name ; VGA_MODULE                            ;
 ; Family                ; Cyclone V                             ;
@@ -52,23 +52,23 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+--------------------------------------------------------+
-; Assembler Generated Files                              ;
-+--------------------------------------------------------+
-; File Name                                              ;
-+--------------------------------------------------------+
-; C:/intelFPGA_lite/18.1/VGA/output_files/VGA_MODULE.sof ;
-+--------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Assembler Generated Files                                                   ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; /home/gsegura/Documents/taller/laboratorio4/VGA/output_files/VGA_MODULE.sof ;
++-----------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Device Options: C:/intelFPGA_lite/18.1/VGA/output_files/VGA_MODULE.sof ;
-+----------------+-----------------------------------------------------------------+
-; Option         ; Setting                                                         ;
-+----------------+-----------------------------------------------------------------+
-; JTAG usercode  ; 0x00B1337B                                                      ;
-; Checksum       ; 0x00B1337B                                                      ;
-+----------------+-----------------------------------------------------------------+
++------------------------------------------+
+; Assembler Device Options: VGA_MODULE.sof ;
++----------------+-------------------------+
+; Option         ; Setting                 ;
++----------------+-------------------------+
+; JTAG usercode  ; 0x00E6E8CF              ;
+; Checksum       ; 0x00E6E8CF              ;
++----------------+-------------------------+
 
 
 +--------------------+
@@ -77,14 +77,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Oct 19 12:52:31 2019
+    Info: Processing started: Sun Oct 20 18:28:19 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off VGA_MODULE -c VGA_MODULE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4839 megabytes
-    Info: Processing ended: Sat Oct 19 12:52:39 2019
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 961 megabytes
+    Info: Processing ended: Sun Oct 20 18:28:26 2019
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
